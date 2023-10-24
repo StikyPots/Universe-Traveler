@@ -1,0 +1,12 @@
+[package]
+name = "jules/gameadventure"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+red = "uncontained0/red@1.2.2"
+matter = "evaera/matter@0.6.2"
+signal = "sleitnick/signal@1.5.0"
+[server-dependencies]
+datastore = "skylord-103/suphisdatastoremodule@1.0.0"

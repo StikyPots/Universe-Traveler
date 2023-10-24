@@ -1,0 +1,4 @@
+{
+    "robloxLsp.completion.endAutocompletion": true,
+    "robloxLsp.hint.setType": true
+}

@@ -1,0 +1,9 @@
+[package]
+name = "skylord-103/suphisdatastoremodule"
+description = "A modified version of suphi's datastore module meant to work with rojo"
+version = "1.0.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+authors = ["Suphi", "5uphi"]
+
+[dependencies]
