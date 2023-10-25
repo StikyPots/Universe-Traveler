@@ -9,6 +9,15 @@ export type Entity = {
     Speed: number;
 }
 
+export type Tower = {
+    placeAreas: {string},
+    radius: {number},
+    rarity: string,
+    damage: {number},
+    delay: {number},
+    price: number,
+}
+
 function GetEntity(name): Entity
     local success, result = pcall(require, entitiesFolder:FindFirstChild(name))
 
@@ -17,7 +26,7 @@ function GetEntity(name): Entity
     end
 end
 
-function GetTower(name)
+function GetTower(name): Tower
     local success, result = pcall(require, TowersFolder:FindFirstChild(name))
 
     if success then

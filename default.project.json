@@ -35,6 +35,10 @@
       "$properties": {
         "FilteringEnabled": true
       },
+      
+      "PlaceholderTowers": {
+        "$className": "Folder"
+      },
 
       "LoadedMap":{
         "$className": "Folder",
@@ -46,7 +50,6 @@
         "Towers":{
           "$className": "Folder"
         }
-
       },
       "Baseplate": {
         "$className": "Part",

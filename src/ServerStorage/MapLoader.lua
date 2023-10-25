@@ -12,7 +12,8 @@ export type MapInstance  = {
     Roads: Folder,
     waypoints: Folder,
     Placable: Folder,
-    StartPos: Part
+    TeleportPos: Part;
+    StartPos: Part;
 }
 
 type settings = {
