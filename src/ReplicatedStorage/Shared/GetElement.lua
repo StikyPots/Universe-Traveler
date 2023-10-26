@@ -7,6 +7,10 @@ export type Entity = {
     System: string;
     Health: number;
     Speed: number;
+
+    Animations: {
+        OnSummon: string
+    }
 }
 
 export type Tower = {

@@ -37,6 +37,7 @@ return function(world: matter.World)
                 Humanoid.MoveToFinished:Wait()
             end
             Model:Destroy()
+            Model:RemoveTag("Entities")
         end)
 
         
