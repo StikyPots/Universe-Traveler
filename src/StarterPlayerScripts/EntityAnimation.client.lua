@@ -36,7 +36,6 @@ CollectionService:GetInstanceAddedSignal("Entities"):Connect(function(Entity: In
 
     local Humanoid = Entity:WaitForChild("Humanoid")
 
-    print(Entity)
 
 
     local Animator: Animator = Humanoid:FindFirstChild("Animator")

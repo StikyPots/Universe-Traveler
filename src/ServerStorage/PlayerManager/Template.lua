@@ -7,7 +7,11 @@ export type UserdataTemplate = {
     Towers: {};
 }
 
-
+export type Tower = {
+    Name: string;
+    Experience: number;
+    Level: number;
+}
 
 return {
     UserdataTemplate = {

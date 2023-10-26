@@ -17,7 +17,12 @@ function new()
     local self = setmetatable(
         {
             Slots = {};
-            Towers = GettingTower:Call("GettingTower"):Await();
+
+            Towers = GettingTower:Call("GettingTower"):Catch(function(err)
+                print(err)
+                
+            end):Await();
+
             OnSelected = Signal.new() :: Signal.Signal;
         },
         {

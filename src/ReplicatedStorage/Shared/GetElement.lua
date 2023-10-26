@@ -14,6 +14,7 @@ export type Entity = {
 }
 
 export type Tower = {
+    Prefix: string;
     placeAreas: {string},
     radius: {number},
     rarity: string,

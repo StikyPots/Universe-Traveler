@@ -1,4 +1,5 @@
 return {
+    Prefix = "ShootingTower";
     placeAreas = {"placeArea"},
     radius = {15, 25, 35},
     rarity = "rare",

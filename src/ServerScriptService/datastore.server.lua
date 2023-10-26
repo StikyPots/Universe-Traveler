@@ -12,14 +12,11 @@ Players.PlayerAdded:Connect(function(player)
     local Iplayer: PlayerInterface.IPlayer = PlayerInterface.new(player)
     print(Iplayer.SessionData:Get("Coins"))
 
-    Iplayer:EquipTower("Peashooter", {Name = "Peashooter", Experience = 0, Level = 0})
-
     GettingTower:On("GettingTower", function(player)
-        local Iplayer = PlayerInterface.GetPlayerFromPlayerInstance(player)
+        local Iplayer = PlayerInterface.GetIPlayerFromPlayerInstance(player)
 
         local StringfyTowers = {}
         
-
         for key, _ in Iplayer.EquipTowers.Value do
             table.insert(StringfyTowers, key)
         end

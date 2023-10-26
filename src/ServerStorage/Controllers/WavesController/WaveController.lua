@@ -21,7 +21,7 @@ return function(name: string, amount: number)
     local EntityToSpawn = components(string.format(SystemPrefix, EntityInfo.System))
     local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
 
-    print(string.format(SystemPrefix, EntityInfo.System))
+    -- print(string.format(SystemPrefix, EntityInfo.System))
 
     local StartPos = LoadedMap.StartPos
     local Waypoints = LoadedMap.waypoints:GetChildren()

@@ -102,6 +102,11 @@ function super.UpdateExperience(self: IPlayer, Value: number)
     end
 end
 
+function super.CloseDatastore(self: IPlayer)
+    self.EquipTowers:Close()
+    self.Userdata:Close()
+end
+
 function super.EquipTower(self: IPlayer, Tower: string, TowerStats: {Name: string, Experience: number, Level: number})
     local TowersDatastore = self.EquipTowers.Value
     
@@ -112,6 +117,14 @@ function super.EquipTower(self: IPlayer, Tower: string, TowerStats: {Name: strin
     self.EquipTowers.Value[Tower] = TowerStats
 end
 
+
+function super.GetTower(self: IPlayer, Name: string): {Name: string, Experience: number, Level: number}
+    if not self.EquipTowers.Value[Name] then
+        return nil
+    end
+    
+    return self.EquipTowers.Value[Name]
+end
 
 function super.UnequipTower(self: IPlayer, Tower: string)
     local TowersDatastore = self.EquipTowers.Value
@@ -127,7 +140,7 @@ function super.ClearTower(self: IPlayer)
     self.EquipTowers.Value = {}
 end
 
-function GetPlayerFromPlayerInstance(player: Player): IPlayer
+function GetIPlayerFromPlayerInstance(player: Player): IPlayer
     return _Players[player.UserId]
 end
 
@@ -137,6 +150,6 @@ end
 
 return {
     new = new;
-    GetPlayerFromPlayerInstance = GetPlayerFromPlayerInstance,
+    GetIPlayerFromPlayerInstance = GetIPlayerFromPlayerInstance,
     RemovePlayer = RemovePlayer,
 }
