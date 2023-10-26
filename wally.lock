@@ -3,6 +3,11 @@
 registry = "test"
 
 [[package]]
+name = "evaera/cmdr"
+version = "1.12.0"
+dependencies = []
+
+[[package]]
 name = "evaera/matter"
 version = "0.6.2"
 dependencies = [["TestEZ", "roblox/testez@0.4.1"]]
@@ -10,7 +15,7 @@ dependencies = [["TestEZ", "roblox/testez@0.4.1"]]
 [[package]]
 name = "jules/gameadventure"
 version = "0.1.0"
-dependencies = [["matter", "evaera/matter@0.6.2"], ["red", "uncontained0/red@1.2.2"], ["signal", "sleitnick/signal@1.5.0"], ["datastore", "skylord-103/suphisdatastoremodule@1.0.0"]]
+dependencies = [["cmdr", "evaera/cmdr@1.12.0"], ["matter", "evaera/matter@0.6.2"], ["red", "uncontained0/red@1.2.2"], ["signal", "sleitnick/signal@1.5.0"], ["datastore", "skylord-103/suphisdatastoremodule@1.0.0"]]
 
 [[package]]
 name = "roblox/testez"

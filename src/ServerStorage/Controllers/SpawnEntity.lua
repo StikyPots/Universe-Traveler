@@ -9,7 +9,7 @@ local GetEntity = require(Shared.GetElement).GetEntity
 local MapLoader = require(ServerStorage.MapLoader)
 
 local Assets: Folder = ReplicatedStorage.Assets
-local World: matter.World = matter.World.new()
+local World: matter.World = require(ServerStorage.World)
 local SystemsFolder = ServerStorage.Systems.EntitiesSystems
 local SystemPrefix = "%sSystem"
 

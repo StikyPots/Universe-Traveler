@@ -8,5 +8,6 @@ realm = "shared"
 red = "uncontained0/red@1.2.2"
 matter = "evaera/matter@0.6.2"
 signal = "sleitnick/signal@1.5.0"
+cmdr = "evaera/cmdr@1.12.0"
 [server-dependencies]
 datastore = "skylord-103/suphisdatastoremodule@1.0.0"
