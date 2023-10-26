@@ -53,9 +53,11 @@ function super.load(self:mapLoader ,callback: (mapFolder: MapInstance) -> ())
     end
 
     for _, element: Folder in MapToLoad:GetChildren() do
+        task.wait(0.05)
         element:Clone()
         element.Parent = LoadedMap
     end
+
 
     if callback then
         callback(LoadedMap)

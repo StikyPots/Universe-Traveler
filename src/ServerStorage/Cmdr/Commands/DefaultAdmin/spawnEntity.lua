@@ -2,11 +2,11 @@ return {
     Name = "spawn_entity";
 	Aliases = {"spwne"};
 	Description = "Spawn a new entity";
-	Group = "Admin";
+	Group = "DefaultAdmin";
 	Args = {
 		{
-			Type = "string";
-			Name = "Entity name";
+			Type = "entity";
+			Name = "Entity";
 			Description = "The entity to spawn";
 		},
         {

@@ -3,13 +3,20 @@ local RunService = game:GetService("RunService")
 
 local matter = require(ReplicatedStorage.Libraries.matter)
 
+
+
+
 local start = function(world, folder)
 	local state = {}
 	
 	local systems = {}
 	
 	local loop = matter.Loop.new(world, state)
+
+
+
 	
+
 	for i, system in folder:GetChildren() do
 		local ok, result = pcall(require, system)
 

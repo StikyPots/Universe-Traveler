@@ -22,7 +22,6 @@ end)
 
 PreloadTimer.Ended:Connect(function()
 
-
     currentMap:load(function(MapFolder)
         local TeleportPosPivot = MapFolder.TeleportPos:GetPivot()
 
