@@ -3,11 +3,11 @@ local serverStorage = game:GetService("ServerStorage")
 
 local matter = require(replicatedStorage.Libraries.matter)
 local components = require(replicatedStorage.Shared.Components)
-
-local WalkingEntitySystem = components("WalkingEntitySystem")
+local SummonEntitySystem = components("SummonEntitySystem")
+local SpawnEntityController = require(serverStorage.Controllers.SpawnEntity)
 
 return function(world: matter.World)
-    for id, entity in world:query(WalkingEntitySystem) do
+    for id, entity in world:query(SummonEntitySystem) do
         
 
         local Model:Model = entity.Model;
@@ -35,11 +35,11 @@ return function(world: matter.World)
             for i=1, #Waypoints do
                 Humanoid:MoveTo(Waypoints[i].Position)
                 Humanoid.MoveToFinished:Wait()
+                SpawnEntityController("Zombie", i, world)
+
             end
             Model:Destroy()
         end)
-
-        
     end
 end
 

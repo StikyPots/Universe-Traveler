@@ -41,7 +41,7 @@ function super.startOnPlayerAdded(self: Timer)
 
 
             task.defer(function()
-                for sec = self.Delay, 1, -1 do
+                for sec = self.Delay, 0, -1 do
                     task.wait(1)
                    print(`start in {sec} seconds`)
                     self.Tick:Fire(sec)

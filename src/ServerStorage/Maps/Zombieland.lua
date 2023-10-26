@@ -1,4 +1,4 @@
 return {
     Waves = 15;
-    Entities = {"Zombie"};
+    Entities = {"Wizzard"};
 }
