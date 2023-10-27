@@ -105,7 +105,7 @@ function super.Update(self: ITower)
     }))
 end
 
-function super.Remove(self: ITower)
+function super.Delete(self: ITower)
     World:despawn(self.Id)
     _Towers[tostring(self.Id)] = nil
     self.Model:Destroy()
