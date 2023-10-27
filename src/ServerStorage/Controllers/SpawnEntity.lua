@@ -16,6 +16,7 @@ local SystemPrefix = "%sSystem"
 
 
 return function(name: string, Pos, World)
+
     local EntityInfo  = GetEntity(name)
     local EntityToSpawn = components("WalkingEntitySystem")
     local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
@@ -33,27 +34,15 @@ return function(name: string, Pos, World)
         return tonumber(a.Name) < tonumber(b.Name)
     end)
 
-    local stringfyTable = {}
 
-    for i = 1, #Waypoints, 1 do
-        stringfyTable[tostring(i)] = Waypoints[i]
-    end
+    local temporaryTable = table.pack(select(Pos, table.unpack(Waypoints)))
+    Waypoints = temporaryTable
 
-    for i = 1, Pos, 1 do
-        stringfyTable[tostring(i)] = nil
-    end
-
-    Waypoints = {}
-
-    for k, Waypoint in stringfyTable do
-        table.insert(Waypoints, Waypoint)
-    end
+    print(Waypoints)
 
     table.sort(Waypoints, function(a, b)
         return tonumber(a.Name) < tonumber(b.Name)
     end)
-
-    
 
     if not Model then
         error(`{name} not found`)

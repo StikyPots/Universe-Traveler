@@ -31,5 +31,6 @@ end)
 
 Players.PlayerRemoving:Connect(function(player)
     local Iplayer = PlayerInterface.RemovePlayer(player)
+    Iplayer:CloseDatastore()
 end)
 

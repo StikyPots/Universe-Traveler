@@ -20,7 +20,6 @@ function new()
 
             Towers = GettingTower:Call("GettingTower"):Catch(function(err)
                 print(err)
-                
             end):Await();
 
             OnSelected = Signal.new() :: Signal.Signal;

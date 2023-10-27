@@ -22,7 +22,7 @@ function new(player: Player)
 
     local self = setmetatable(
         {
-
+            
             Player = player :: Player;
             Userdata = SuphisDatastore.new("Userdata",  KeyUserdata) :: SuphisDatastore.DataStore;
             EquipTowers = SuphisDatastore.new("EquipTowers", KeyEquipTowers) :: SuphisDatastore.DataStore;
@@ -145,7 +145,10 @@ function GetIPlayerFromPlayerInstance(player: Player): IPlayer
 end
 
 function RemovePlayer(player: Player)
+    local IPlayer = _Players[player.UserId]
     _Players[player.UserId] = nil
+
+    return IPlayer
 end
 
 return {

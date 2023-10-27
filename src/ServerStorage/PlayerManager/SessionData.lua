@@ -43,8 +43,6 @@ function Session.Update(self: SessionData, instance: string, Value: number, call
 end
 
 
-
-
 return {
     new = new
 }
