@@ -25,8 +25,10 @@ return function (World: matter.World)
         local Target: Model = FindTarget(Model, Radius)
 
 
-
         if Target then
+
+            
+            print(id, Damage)
 
             if useThrottle(.005, id) then
                 Model.PrimaryPart.CFrame = CFrame.lookAt(Model.PrimaryPart.Position, Target.PrimaryPart.Position)

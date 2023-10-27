@@ -14,7 +14,7 @@ local PlacementNetwork = red.Server("PlacementNetwork")
 local NotificationNetwork = red.Server("NotificationNetwork")
 
 
-PlacementNetwork:On("Placement", function(Player: Player, Name: string, CFrame: CFrame)
+PlacementNetwork:On("Placement", function(Player: Player, Name: string, CFrameV: CFrame)
     local IPlayer = PlayerInterface.GetIPlayerFromPlayerInstance(Player)
 
 
@@ -28,5 +28,7 @@ PlacementNetwork:On("Placement", function(Player: Player, Name: string, CFrame: 
     end
 
     IPlayer.SessionData:Update("Coins", - TowerPrice)
-    local CreatedTower = TowerInterface.new(Player, Name, CFrame)
+    local CreatedTower = TowerInterface.new(Player, Name, CFrameV)
+
+    CreatedTower:Update()
 end)

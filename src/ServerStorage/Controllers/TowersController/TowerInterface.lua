@@ -14,15 +14,15 @@ local super = {}
 local World: matter.World = require(ServerStorage.World)
 local SystemsFolder = ServerStorage.Systems.TowerSystems
 local SystemPrefix = "%sSystem"
-
 local BASE_LEVELDAMAGE = 1.5
-
-Start(World, SystemsFolder)
 
 export type ITower = typeof(new())
 type IPlayer = playerInterface.IPlayer
 type DatastoreTower = {Name: string, Experience: number, Level: number}
 
+local IncrementId = 0
+
+Start(World, SystemsFolder)
 
 function new(Player: Player, Name: string, CFrame: CFrame)
 
@@ -42,6 +42,7 @@ function new(Player: Player, Name: string, CFrame: CFrame)
             Radius = GlobalTowerInfo.radius;
             Damage = GlobalTowerInfo.damage;
             Delay = GlobalTowerInfo.delay;
+            Price = GlobalTowerInfo.price;
             Updated = 1;
             _DAMAGECALCULATION = 0;
             _Component = nil;
@@ -51,13 +52,22 @@ function new(Player: Player, Name: string, CFrame: CFrame)
         }
     )
 
-    _Towers[tostring(#_Towers+1)] = self
+
     self.PlayerTowerInfo = self.IPlayer:GetTower(self.Name) :: DatastoreTower
-    self.Id = tonumber(#_Towers)
     self.Level = self.PlayerTowerInfo.Level
     self._DAMAGECALCULATION = self.Damage[self.Updated] + self.Level * BASE_LEVELDAMAGE
     self._Component = components(string.format(SystemPrefix, self.Prefix))
 
+
+    self.Id = IncrementId + 1
+    IncrementId = self.Id
+
+
+    _Towers[tostring(self.Id)] = self
+
+
+
+    print(IncrementId)
 
     self:Spawn()
 
@@ -96,6 +106,16 @@ end
 
 
 function super.Update(self: ITower)
+
+
+    if self.Updated > 3 then
+        return
+    end
+
+    self.Updated += 1
+
+    self._DAMAGECALCULATION = self.Damage[self.Updated] + self.Level * BASE_LEVELDAMAGE
+
     World:replace(self.Id, self._Component({
         Owner = self.Owner;
         Model = self.Model;
@@ -106,22 +126,24 @@ function super.Update(self: ITower)
 end
 
 function super.Delete(self: ITower)
-    World:despawn(self.Id)
     _Towers[tostring(self.Id)] = nil
     self.Model:Destroy()
-    self.IPlayer.SessionData:Update("Coins", self.price * self.updated / 2)
+    World:despawn(self.Id)
+
+    print(_Towers)
+    self.IPlayer.SessionData:Update("Coins", math.round(self.Price * self.Updated / 1.5))
 end
 
 -- return only Radius, Damage, Delay
 
 
 function super.Get(self: ITower, Instance: string, updated: number)
-    local accept = {"Radius", "Damage", "Delay", "Name"}
+    local accept = {"Radius", "Damage", "Delay"}
 
     assert(table.find(accept, Instance), "Not instance found")
     assert(updated >= 1 and updated <= 3, "uptaded must be between 1 and 3")
 
-
+ 
     return self[Instance][updated]
 end
 
