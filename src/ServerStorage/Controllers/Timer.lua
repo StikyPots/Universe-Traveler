@@ -28,11 +28,9 @@ function new(DELAY: number, AmountPlayerToStart: number?)
 end
 
 
-function super.startOnPlayerAdded(self: Timer)
-    playerList = Players:GetPlayers()
-
-    local function update()
-        playerList = Players:GetPlayers()
+local function update(self)
+    return function(Player)
+        local playerList = Players:GetPlayers()
         local PlayersNumber = #playerList
 
         if PlayersNumber >= self.AmountPlayerToStart then
@@ -43,7 +41,7 @@ function super.startOnPlayerAdded(self: Timer)
             task.defer(function()
                 for sec = self.Delay, 0, -1 do
                     task.wait(1)
-                   print(`start in {sec} seconds`)
+                print(`start in {sec} seconds`)
                     self.Tick:Fire(sec)
                 end
                 self.Ended:Fire(true)
@@ -57,19 +55,23 @@ function super.startOnPlayerAdded(self: Timer)
             warn(`{self.AmountPlayerToStart - PlayersNumber} players missing`)
         end
     end
+end
 
-    self.Connections.OnPlayerAdded = Players.PlayerAdded:Connect(update)
-    self.Connections.OnPlayerRemoving = Players.PlayerRemoving:Connect(update)
+
+function super.startOnPlayerAdded(self: Timer)
+    self.Connections.OnPlayerAdded = Players.PlayerAdded:Connect(update(self))
+    self.Connections.OnPlayerRemoving = Players.PlayerRemoving:Connect(update(self))
 end
 
 function super.Start(self: Timer)
 
     task.defer(function()
-        TimerNetwork:FireAll("OnTimerStarted")
+        TimerNetwork:FireAll("OnTimerStarted", self.Delay)
 
         for sec = self.Delay, 0, -1 do
 
             task.wait(1)
+            TimerNetwork:FireAll("OnTimerUpdate", sec)
             self.Tick:Fire(sec)
 
             if self.Skipped then
@@ -77,6 +79,7 @@ function super.Start(self: Timer)
             end
         end
         
+        TimerNetwork:FireAll("OnTimerEnded")
         self.Ended:Fire(true)
     end)
 end

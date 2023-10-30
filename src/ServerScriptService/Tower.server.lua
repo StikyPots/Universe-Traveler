@@ -28,7 +28,5 @@ PlacementNetwork:On("Placement", function(Player: Player, Name: string, CFrameV:
     end
 
     IPlayer.SessionData:Update("Coins", - TowerPrice)
-    local CreatedTower = TowerInterface.new(Player, Name, CFrameV)
-
-    CreatedTower:Update()
+    TowerInterface.new(Player, Name, CFrameV)
 end)

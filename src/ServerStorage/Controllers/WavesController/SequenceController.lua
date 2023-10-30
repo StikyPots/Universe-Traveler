@@ -7,7 +7,7 @@ local WavesSettings = require(script.Parent.Settings)
 local MapLoader = require(ServerStorage.MapLoader)
 local WaveController = require(script.Parent.WaveController)
 local TimerModule = require(ServerStorage.Controllers.Timer)
-local super = {}
+local SequenceController = {}
 
 local TimerNetwork = red.Server("Timer")
 
@@ -25,13 +25,13 @@ function new(WavesNumber: number, Entities: {string})
             SequenceEnded = signal.new();
         },
         {
-            __index = super
+            __index = SequenceController
         }
     )
     return self
 end
 
-function super.Start(self: SequenceController)
+function SequenceController.Start(self: SequenceController)
 
     local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
     local EntitesNumber = #self.Entities

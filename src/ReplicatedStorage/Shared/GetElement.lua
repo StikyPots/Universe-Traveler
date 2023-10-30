@@ -9,7 +9,8 @@ export type Entity = {
     Speed: number;
 
     Animations: {
-        OnSummon: string
+        OnSummon: string,
+        Walking: string,
     }
 }
 
@@ -22,6 +23,8 @@ export type Tower = {
     delay: {number},
     price: number,
 }
+
+
 
 function GetEntity(name): Entity
     local success, result = pcall(require, entitiesFolder:FindFirstChild(name))

@@ -14,7 +14,7 @@ local super = {}
 local World: matter.World = require(ServerStorage.World)
 local SystemsFolder = ServerStorage.Systems.TowerSystems
 local SystemPrefix = "%sSystem"
-local BASE_LEVELDAMAGE = 1.5
+local BASE_LEVELDAMAGE = 1.075
 
 export type ITower = typeof(new())
 type IPlayer = playerInterface.IPlayer
@@ -68,7 +68,6 @@ function new(Player: Player, Name: string, CFrame: CFrame)
 
 
     print(IncrementId)
-
     self:Spawn()
 
     return self
@@ -89,10 +88,9 @@ function super.Spawn(self: ITower)
     self.Model.Parent = workspace.LoadedMap.Towers
 
 
+    self.Model:SetAttribute("Id", self.Id)
 
-
-
-
+    
     World:spawnAt(self.Id, self._Component({
 
         Owner = self.Owner;
@@ -134,10 +132,8 @@ function super.Delete(self: ITower)
     self.IPlayer.SessionData:Update("Coins", math.round(self.Price * self.Updated / 1.5))
 end
 
--- return only Radius, Damage, Delay
 
-
-function super.Get(self: ITower, Instance: string, updated: number)
+function super.Get(self: ITower, Instance: string, updated: number): number -- return only Radius, Damage, Delay
     local accept = {"Radius", "Damage", "Delay"}
 
     assert(table.find(accept, Instance), "Not instance found")
@@ -152,7 +148,11 @@ function GetTowerFromId(Id: number): ITower
     return _Towers[tostring(Id)]
 end
 
+
+
+
 return {
     new = new;
     GetTowerFromId = GetTowerFromId;
 }
+

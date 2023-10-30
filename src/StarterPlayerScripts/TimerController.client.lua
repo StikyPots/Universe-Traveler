@@ -10,7 +10,8 @@ local TimerLabel: TextLabel = TimerScreen.Canva.Seconds
 
 
 
-TimerNetwork:On("OnTimerStarted", function()
+TimerNetwork:On("OnTimerStarted", function(delay)
+    TimerLabel.Text = `{delay} seconds left`
     TimerScreen.Enabled = true
 end)
 

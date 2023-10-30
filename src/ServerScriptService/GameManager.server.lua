@@ -16,9 +16,6 @@ local TimerNetwork = red.Server("Timer")
 
 PreloadTimer:startOnPlayerAdded()
 
-PreloadTimer.Tick:Connect(function(seconds)
-    TimerNetwork:FireAll("OnTimerUpdate", seconds)
-end)
 
 PreloadTimer.Ended:Connect(function()
 
@@ -30,16 +27,11 @@ PreloadTimer.Ended:Connect(function()
         end
     end)
 
-    TimerNetwork:FireAll("OnTimerEnded")
     StartTimer:Start()
 end)
 
-StartTimer.Tick:Connect(function(seconds)
-    TimerNetwork:FireAll("OnTimerUpdate", seconds)
-end)
 
 StartTimer.Ended:Connect(function(seconds)
-    TimerNetwork:FireAll("OnTimerEnded")
     Sequence:Start()
 end)
 
