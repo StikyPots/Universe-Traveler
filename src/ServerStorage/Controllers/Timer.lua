@@ -5,7 +5,7 @@ local signal = require(ReplicatedStorage.Libraries.signal)
 local TimerNetwork = red.Server("Timer")
 
 
-local super = {}
+local Timer = {}
 
 export type Timer = typeof(new())
 
@@ -20,7 +20,7 @@ function new(DELAY: number, AmountPlayerToStart: number?)
             Connections = {};
         },
         {
-            __index = super
+            __index = Timer
         }
     )
 
@@ -28,7 +28,7 @@ function new(DELAY: number, AmountPlayerToStart: number?)
 end
 
 
-local function update(self)
+local function update(self: Timer)
     return function(Player)
         local playerList = Players:GetPlayers()
         local PlayersNumber = #playerList
@@ -36,7 +36,6 @@ local function update(self)
         if PlayersNumber >= self.AmountPlayerToStart then
 
             TimerNetwork:FireAll("OnTimerStarted")
-
 
             task.defer(function()
                 for sec = self.Delay, 0, -1 do
@@ -58,12 +57,12 @@ local function update(self)
 end
 
 
-function super.startOnPlayerAdded(self: Timer)
+function Timer.startOnPlayerAdded(self: Timer)
     self.Connections.OnPlayerAdded = Players.PlayerAdded:Connect(update(self))
     self.Connections.OnPlayerRemoving = Players.PlayerRemoving:Connect(update(self))
 end
 
-function super.Start(self: Timer)
+function Timer.Start(self: Timer)
 
     task.defer(function()
         TimerNetwork:FireAll("OnTimerStarted", self.Delay)
@@ -84,10 +83,11 @@ function super.Start(self: Timer)
     end)
 end
 
-function super.Stop(self: Timer)
+function Timer.Stop(self: Timer)
     self.Skipped = true
 end
 
 return {
     new = new
 }
+

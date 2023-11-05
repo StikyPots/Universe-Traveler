@@ -1,5 +1,6 @@
 local CollectionService = game:GetService("CollectionService")
-
+local ServerStorage = game:GetService("ServerStorage")
+local Logs = require(ServerStorage.Controllers.LogsSystem)
 
 return function(context)
     for _, entity in CollectionService:GetTagged("Entities") do
@@ -7,4 +8,5 @@ return function(context)
         entity:RemoveTag("Entities")
         entity:Destroy()
     end
+    Logs.AddLog(context.Executor.Name, "Clear_All_Entity", tostring("none"))
 end

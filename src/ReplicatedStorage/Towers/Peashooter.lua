@@ -2,7 +2,7 @@ return {
     Prefix = "ShootingTower";
     placeAreas = {"placeArea"},
     radius = {15, 25, 55},
-    rarity = "Ultimate",
+    rarity = "Common",
     damage = {8, 24, 72},
     delay = {2, 1.2, 1},
     price = 250,

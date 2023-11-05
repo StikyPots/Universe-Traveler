@@ -57,7 +57,7 @@ function super._addToList(self: SlotController)
     UIGradient.Color = ColorSequence.new(RarityColors[self.TowerRarity])
 
     if self.TowerRarity == "Ultimate" then
-        local TweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1)
+        local TweenInfo = TweenInfo.new(5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, -1)
         TweenService:Create(UIGradient, TweenInfo, {Rotation = 180}):Play()
     end
 

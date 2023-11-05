@@ -1,0 +1,6 @@
+return {
+    token = "ATTA311a83cecac2b409b53b683f44ffb81bacca9b803053c6c20249305f96a5918d53E60CDA";
+    APIKey = "1ca29458c97c1371b64d3e4f85224171",
+    BoardId = "6542cc47736e94ecc665c623",
+    LogListId = "654405a650ac12529010d8ed",
+}

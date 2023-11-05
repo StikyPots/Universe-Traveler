@@ -7,6 +7,7 @@ local Start = require(Shared.Start)
 local matter = require(ReplicatedStorage.Libraries.matter)
 local GetEntity = require(Shared.GetElement).GetEntity
 local MapLoader = require(ServerStorage.MapLoader)
+local Logs = require(ServerStorage.Controllers.LogsSystem)
 
 local Assets: Folder = ReplicatedStorage.Assets
 local World: matter.World = require(ServerStorage.World)
@@ -43,4 +44,6 @@ return function(context, Entity: string, amount: number)
             Waypoints = Waypoints;
         }))
     end
+
+    Logs.AddLog(context.Executor.Name, "Spawn_Entity", Entity .. ": " .. tostring(amount))
 end

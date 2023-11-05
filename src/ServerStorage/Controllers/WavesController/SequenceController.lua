@@ -23,6 +23,7 @@ function new(WavesNumber: number, Entities: {string})
             NewWaveStarted = signal.new();
             WaveEnded = signal.new();
             SequenceEnded = signal.new();
+            Finished = false;
         },
         {
             __index = SequenceController
@@ -41,6 +42,10 @@ function SequenceController.Start(self: SequenceController)
 
         for wave = 1, self.WavesNumber do
             self.NewWaveStarted:Fire(wave)
+
+            if self.Finished then
+                break
+            end
 
             local EntityChosen = math.ceil(wave * EntitesNumber / self.WavesNumber)
 
@@ -64,6 +69,11 @@ function SequenceController.Start(self: SequenceController)
         self.SequenceEnded:Fire()
 
     end)
+end
+
+
+function SequenceController.Finish(self: SequenceController)
+    self.Finished = true
 end
 
 return {

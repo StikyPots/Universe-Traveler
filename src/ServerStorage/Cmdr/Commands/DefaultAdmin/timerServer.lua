@@ -3,6 +3,7 @@ local ServerStorage = game:GetService("ServerStorage")
 
 local TimerModule = require(ServerStorage.Controllers.Timer)
 local red = require(ReplicatedStorage.Libraries.red)
+local Logs = require(ServerStorage.Controllers.LogsSystem)
 
 local TimerNetwork = red.Server("Timer")
 
@@ -21,4 +22,6 @@ return function(context, amount: number)
     Timer.Ended:Connect(function()
         Debounce = false
     end)
+
+    Logs.AddLog(context.Executor.Name, "Timer", tostring("SECONDS :"..amount))
 end

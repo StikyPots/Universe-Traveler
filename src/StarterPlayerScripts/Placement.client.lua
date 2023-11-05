@@ -34,6 +34,7 @@ local canPlace = false
 
 --// function
 
+
 local function place(actionName, inputState, _inputObject)
     if inputState == Enum.UserInputState.Begin and canPlace then
        PlacementNetwork:Fire("Placement", SelectedTowers.Name, SelectedTowers:GetPivot())

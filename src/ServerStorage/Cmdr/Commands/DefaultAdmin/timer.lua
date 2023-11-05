@@ -7,7 +7,7 @@ return {
 	Args = {
 		{
 			Type = "number";
-			Name = "Entity";
+			Name = "number";
 			Description = "Amount of seconds";
 		},
 	};
