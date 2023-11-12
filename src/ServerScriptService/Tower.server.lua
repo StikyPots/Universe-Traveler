@@ -7,7 +7,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local red = require(ReplicatedStorage.Libraries.red)
 local PlayerInterface = require(ServerStorage.PlayerManager.PlayerInterface)
 local GetTowers = require(ReplicatedStorage.Shared.GetElement).GetTower
-local TowerInterface = require(ServerStorage.Controllers.TowersController.TowerInterface)
+local TowerInterface = require(ServerStorage.Services.TowersController.TowerInterface)
 
 --// constante
 local PlacementNetwork = red.Server("PlacementNetwork")

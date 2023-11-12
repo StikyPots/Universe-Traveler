@@ -6,7 +6,7 @@ local red = require(ReplicatedStorage.Libraries.red)
 local WavesSettings = require(script.Parent.Settings)
 local MapLoader = require(ServerStorage.MapLoader)
 local WaveController = require(script.Parent.WaveController)
-local TimerModule = require(ServerStorage.Controllers.Timer)
+local TimerModule = require(ServerStorage.Services.Timer)
 local SequenceController = {}
 
 local TimerNetwork = red.Server("Timer")

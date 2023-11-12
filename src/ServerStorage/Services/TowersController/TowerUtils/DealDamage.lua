@@ -2,10 +2,10 @@ local ServerStorage = game:GetService("ServerStorage")
 local playerInterface = require(ServerStorage.PlayerManager.PlayerInterface)
 
 
-local COINS_ON_KILL = 350
 
 return function(Owner: Player, Target: Model, Damage: number)
    local Humanoid: Humanoid = Target:FindFirstChild("Humanoid")
+   local COINS_ON_KILL = Humanoid.MaxHealth
 
    if not Humanoid then
         return

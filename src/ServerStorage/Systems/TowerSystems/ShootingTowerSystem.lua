@@ -5,8 +5,8 @@ local ServerStorage = game:GetService("ServerStorage")
 local matter = require(ReplicatedStorage.Libraries.matter)
 local red = require(ReplicatedStorage.Libraries.red)
 local components = require(ReplicatedStorage.Shared.Components)
-local FindTarget = require(ServerStorage.Controllers.TowersController.TowerUtils.FindTarget)
-local DealDamage = require(ServerStorage.Controllers.TowersController.TowerUtils.DealDamage)
+local FindTarget = require(ServerStorage.Services.TowersController.TowerUtils.FindTarget)
+local DealDamage = require(ServerStorage.Services.TowersController.TowerUtils.DealDamage)
 
 local ShootingTowerSystem = components("ShootingTowerSystem")
 local useThrottle = matter.useThrottle

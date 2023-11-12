@@ -1,9 +1,9 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
-local TimerModule = require(ServerStorage.Controllers.Timer)
+local TimerModule = require(ServerStorage.Services.Timer)
 local red = require(ReplicatedStorage.Libraries.red)
-local Logs = require(ServerStorage.Controllers.LogsSystem)
+local Logs = require(ServerStorage.Services.LogsSystem)
 
 local TimerNetwork = red.Server("Timer")
 

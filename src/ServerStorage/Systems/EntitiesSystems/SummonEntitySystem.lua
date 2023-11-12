@@ -5,7 +5,7 @@ local matter = require(replicatedStorage.Libraries.matter)
 local red = require(replicatedStorage.Libraries.red)
 local components = require(replicatedStorage.Shared.Components)
 local SummonEntitySystem = components("SummonEntitySystem")
-local SpawnEntityController = require(serverStorage.Controllers.SpawnEntity)
+local SpawnEntityController = require(serverStorage.Services.SpawnEntity)
 
 local AnimationNetwork = red.Server("AnimationNetwork")
 

@@ -7,7 +7,7 @@ local Start = require(Shared.Start)
 local matter = require(ReplicatedStorage.Libraries.matter)
 local GetEntity = require(Shared.GetElement).GetEntity
 local MapLoader = require(ServerStorage.MapLoader)
-local Logs = require(ServerStorage.Controllers.LogsSystem)
+local Logs = require(ServerStorage.Services.LogsSystem)
 
 local Assets: Folder = ReplicatedStorage.Assets
 local World: matter.World = require(ServerStorage.World)
