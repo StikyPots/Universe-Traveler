@@ -1,9 +1,11 @@
 local ServerStorage = game:GetService("ServerStorage")
 
 local MapModels: Folder = ServerStorage.MapsModels
+local sequenceService = require(ServerStorage.Services.WavesController.SequenceController)
 local super = {}
 
 export type mapLoader = typeof(new())
+type Sequence = typeof(sequenceService.new())
 
 export type MapInstance  = {
     Entities: Folder,
@@ -34,34 +36,38 @@ function new(name: string)
         {
             name = name;
             settings = GetSettings(name) :: settings;
+            Sequence = nil;
         }, 
         {
             __index = super
         }
         )
+
+        self.Sequence = sequenceService.new(self.settings.Waves, self.settings.Entities)
+
+
     return self
 end
 
-function super.load(self:mapLoader ,callback: (mapFolder: MapInstance) -> ())
+function super.load(self:mapLoader)
 
     local LoadedMap: MapInstance = workspace.LoadedMap
     local MapToLoad: Folder = MapModels:FindFirstChild(self.name)
 
-    if not MapToLoad then
-        error(`the map {self.name} doesn't exsit at location {MapModels.Name}`)
-        return
+    for _, Element: Instance in MapToLoad do
+        local E = Element:Clone()
+        E.Parent = LoadedMap
+        task.wait(.005)
     end
+end
 
-    for _, element: Folder in MapToLoad:GetChildren() do
-        task.wait(0.05)
-        element:Clone()
-        element.Parent = LoadedMap
+function super.telepotPlayerToMap(playerList: {Player})
+
+    for _, player: Player in playerList do
+        local character = player.Character
+        character:PivotTo(workspace.LoadedMap.TeleportPos:GetPivot())
     end
-
-
-    if callback then
-        callback(LoadedMap)
-    end
+    print(playerList .. "have been teleported")
 end
 
 

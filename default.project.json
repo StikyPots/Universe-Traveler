@@ -49,6 +49,10 @@
 
         "Towers":{
           "$className": "Folder"
+        },
+
+        "TeleportPos": {
+          "$className": "Part"
         }
       },
       "Baseplate": {
