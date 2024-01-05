@@ -18,11 +18,9 @@ return function(Owner: Player, Target: Model, Damage: number)
 
    Iplayer.SessionData:Update("DamageDeal", Damage)
 
-   print('Hotbar')
 
    Humanoid.Died:Connect(function()
       Iplayer.SessionData:Update("Coins", COINS_ON_KILL)
       Target:Destroy()
    end)
-
 end

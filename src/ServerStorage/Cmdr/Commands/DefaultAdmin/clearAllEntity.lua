@@ -1,6 +1,6 @@
 return {
     Name = "clear_all_entity";
-	Aliases = {"clrentity"};
+	Aliases = {"cae"};
 	Description = "clear all spawned";
 	Group = "DefaultAdmin";
     Args = {};

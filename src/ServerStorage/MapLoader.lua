@@ -21,6 +21,8 @@ type settings = {
     Entities: {string};
 }
 
+local CurrentMap = nil
+
 local function GetSettings(name)
     local success, result = pcall(require, ServerStorage.Maps:FindFirstChild(name))
 
@@ -33,16 +35,19 @@ function new(name: string)
     local self = setmetatable(
         {
             name = name;
-            settings = GetSettings(name) :: settings;
+            Settings = GetSettings(name) :: settings;
         }, 
         {
             __index = super
         }
         )
+
+
+    CurrentMap = self
     return self
 end
 
-function super.load(self:mapLoader ,callback: (mapFolder: MapInstance) -> ())
+function super.load(self:mapLoader)
 
     local LoadedMap: MapInstance = workspace.LoadedMap
     local MapToLoad: Folder = MapModels:FindFirstChild(self.name)
@@ -57,15 +62,25 @@ function super.load(self:mapLoader ,callback: (mapFolder: MapInstance) -> ())
         element:Clone()
         element.Parent = LoadedMap
     end
-
-
-    if callback then
-        callback(LoadedMap)
-    end
 end
 
 
+function super.TeleportPlayers(self: mapLoader, Players: {Player})
+    local LoadedMap: MapInstance = workspace.LoadedMap
+
+    for _, Player: Player in Players do
+        Player.Character:PivotTo(LoadedMap.TeleportPos:GetPivot())
+    end
+
+    print("all players have been teleported")
+end
+
+function GetCurrentMap(): mapLoader
+    return CurrentMap
+end
+
 
 return {
-    new = new
+    new = new,
+    GetCurrentMap = GetCurrentMap,
 }

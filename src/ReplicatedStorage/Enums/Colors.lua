@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local readonly = require(ReplicatedStorage.Shared.MakeReadOnly)
 
-local Colors = {
+Colors = {
 
     Rarity = {
 
@@ -22,8 +22,8 @@ local Colors = {
         };
     }
 
-}
+} :: typeof(Colors)
 
-return readonly(Colors) :: typeof(Colors)
+return readonly(Colors)
 
 

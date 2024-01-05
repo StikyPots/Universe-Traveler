@@ -14,7 +14,7 @@ local World: matter.World = require(ServerStorage.World)
 local SystemsFolder = ServerStorage.Systems.EntitiesSystems
 local SystemPrefix = "%sSystem"
 
-Start(World, SystemsFolder)
+-- Start(World, SystemsFolder)
 
 return function(name: string, amount: number)
     local EntityInfo  = GetEntity(name)

@@ -120,8 +120,6 @@ local function checkInput(input:InputObject, procssed)
     if keycode and not selected then
         local SlotTower = hotbar.Towers[keycode]
 
-        print(SlotTower)
-
         if SlotTower then
             CreatePlaceholder(SlotTower)
         end

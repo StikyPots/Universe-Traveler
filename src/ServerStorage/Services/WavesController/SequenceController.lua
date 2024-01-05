@@ -4,31 +4,47 @@ local ServerStorage = game:GetService("ServerStorage")
 local signal = require(ReplicatedStorage.Libraries.signal)
 local red = require(ReplicatedStorage.Libraries.red)
 local WavesSettings = require(script.Parent.Settings)
+local matter = require(ReplicatedStorage.Libraries.matter)
 local MapLoader = require(ServerStorage.MapLoader)
 local WaveController = require(script.Parent.WaveController)
-local TimerModule = require(ServerStorage.Services.Timer)
+local World: matter.World = require(ServerStorage.World)
+local Start = require(ReplicatedStorage.Shared.Start)
+
+
+local SystemsFolder = ServerStorage.Systems.EntitiesSystems
+
+local CurrentSequence
+
 local SequenceController = {}
 
-local TimerNetwork = red.Server("Timer")
 
-export type SequenceController = typeof(new())
+export type SequenceController = typeof(SequenceController.new())
 
-function new(WavesNumber: number, Entities: {string})
+function SequenceController.new(WavesNumber: number, Entities: {string})
     local self = setmetatable(
         {
             Entities = Entities;
             WavesNumber = WavesNumber;
             SpawnRate = WavesSettings.spawnRate,
             StartAmount = WavesSettings.StartAmount;
-            NewWaveStarted = signal.new();
+            NewWaveStarted = signal.new(); -- Signal
             WaveEnded = signal.new();
             SequenceEnded = signal.new();
             Finished = false;
+            skipBoolean = false;
         },
         {
             __index = SequenceController
         }
     )
+
+
+    if CurrentSequence == nil then
+        CurrentSequence = self
+    else
+        error("you cannot create a sequence if there is already a sequence", 2)
+    end
+   
     return self
 end
 
@@ -38,8 +54,9 @@ function SequenceController.Start(self: SequenceController)
     local EntitesNumber = #self.Entities
     local Previous = {}
 
-    task.defer(function()
+    Start(World, SystemsFolder)
 
+    task.defer(function()
         for wave = 1, self.WavesNumber do
             self.NewWaveStarted:Fire(wave)
 
@@ -61,13 +78,13 @@ function SequenceController.Start(self: SequenceController)
             
             repeat
             task.wait()
-            until #LoadedMap.Entities:GetChildren() == 0
+            until #LoadedMap.Entities:GetChildren() == 0 or self.skipBoolean
 
+            self.skipBoolean = false
             self.WaveEnded:Fire(wave)
         end
-
         self.SequenceEnded:Fire()
-
+        CurrentSequence = nil
     end)
 end
 
@@ -76,6 +93,16 @@ function SequenceController.Finish(self: SequenceController)
     self.Finished = true
 end
 
-return {
-    new = new
-}
+function SequenceController.skip(self: SequenceController)
+    self.skipBoolean = true
+end
+
+
+
+--Get the current Sequence
+function SequenceController.GetSequence()
+    return CurrentSequence
+end
+
+
+return SequenceController
