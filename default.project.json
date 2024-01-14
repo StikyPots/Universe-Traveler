@@ -14,7 +14,8 @@
     },
 
     "ServerScriptService": {
-      "$path": "src/ServerScriptService"
+      "$path": "src/ServerScriptService",
+      "$ignoreUnknownInstances": true
     },
 
     "ServerStorage": {

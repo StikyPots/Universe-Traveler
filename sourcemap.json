@@ -1,1 +1,1807 @@
-{"name":"GameAdventure","className":"DataModel","filePaths":["default.project.json"],"children":[{"name":"Lighting","className":"Lighting"},{"name":"ReplicatedStorage","className":"ReplicatedStorage","children":[{"name":"Enums","className":"Folder","children":[{"name":"Colors","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Enums\\Colors.lua"]}]},{"name":"Shared","className":"Folder","children":[{"name":"Components","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Shared\\Components.lua"]},{"name":"GetElement","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Shared\\GetElement.lua"]},{"name":"GetEnum","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Shared\\GetEnum.lua"]},{"name":"MakeReadOnly","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Shared\\MakeReadOnly.lua"]},{"name":"RaycastMouse","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Shared\\RaycastMouse.luau"]},{"name":"Start","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Shared\\Start.lua"]}]},{"name":"Towers","className":"Folder","children":[{"name":"Mushroom","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Towers\\Mushroom.lua"]},{"name":"Peashooter","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Towers\\Peashooter.lua"]},{"name":"Toilet","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\Towers\\Toilet.lua"]}]},{"name":"entities","className":"Folder","children":[{"name":"Robot","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\entities\\Robot.lua"]},{"name":"Wizzard","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\entities\\Wizzard.lua"]},{"name":"Zombie","className":"ModuleScript","filePaths":["src/ReplicatedStorage\\entities\\Zombie.lua"]}]},{"name":"Libraries","className":"Folder","children":[{"name":"_Index","className":"Folder","children":[{"name":"evaera_cmdr@1.12.0","className":"Folder","children":[{"name":"cmdr","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\init.lua","Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\default.project.json"],"children":[{"name":"BuiltInCommands","className":"Folder","children":[{"name":"Admin","className":"Folder","children":[{"name":"announce","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\announce.lua"]},{"name":"announceServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\announceServer.lua"]},{"name":"gotoPlace","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\gotoPlace.lua"]},{"name":"gotoPlaceServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\gotoPlaceServer.lua"]},{"name":"kick","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\kick.lua"]},{"name":"kickServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\kickServer.lua"]},{"name":"kill","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\kill.lua"]},{"name":"killServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\killServer.lua"]},{"name":"respawn","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\respawn.lua"]},{"name":"respawnServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\respawnServer.lua"]},{"name":"teleport","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\teleport.lua"]},{"name":"teleportServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\teleportServer.lua"]}]},{"name":"Debug","className":"Folder","children":[{"name":"blink","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\blink.lua"]},{"name":"fetch","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\fetch.lua"]},{"name":"fetchServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\fetchServer.lua"]},{"name":"getPlayerPlaceInstance","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\getPlayerPlaceInstance.lua"]},{"name":"getPlayerPlaceInstanceServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\getPlayerPlaceInstanceServer.lua"]},{"name":"position","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\position.lua"]},{"name":"thru","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\thru.lua"]},{"name":"uptime","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\uptime.lua"]},{"name":"uptimeServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\uptimeServer.lua"]},{"name":"version","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\version.lua"]}]},{"name":"Utility","className":"Folder","children":[{"name":"alias","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\alias.lua"]},{"name":"bind","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\bind.lua"]},{"name":"clear","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\clear.lua"]},{"name":"convertTimestamp","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\convertTimestamp.lua"]},{"name":"echo","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\echo.lua"]},{"name":"edit","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\edit.lua"]},{"name":"history","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\history.lua"]},{"name":"hover","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\hover.lua"]},{"name":"jsonArrayDecode","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\jsonArrayDecode.lua"]},{"name":"jsonArrayEncode","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\jsonArrayEncode.lua"]},{"name":"len","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\len.lua"]},{"name":"math","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\math.lua"]},{"name":"pick","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\pick.lua"]},{"name":"rand","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\rand.lua"]},{"name":"replace","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\replace.lua"]},{"name":"resolve","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\resolve.lua"]},{"name":"run","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\run.lua"]},{"name":"runLines","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\runLines.lua"]},{"name":"runif","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\runif.lua"]},{"name":"unbind","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\unbind.lua"]},{"name":"var","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\var.lua"]},{"name":"varServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\varServer.lua"]},{"name":"varSet","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\varSet.lua"]},{"name":"varSetServer","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\varSetServer.lua"]}]},{"name":"help","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\help.lua"]}]},{"name":"BuiltInTypes","className":"Folder","children":[{"name":"BindableResource","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\BindableResource.lua"]},{"name":"BrickColor","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\BrickColor.lua"]},{"name":"Color3","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Color3.lua"]},{"name":"Command","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Command.lua"]},{"name":"ConditionFunction","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\ConditionFunction.lua"]},{"name":"Duration","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Duration.lua"]},{"name":"JSON","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\JSON.lua"]},{"name":"MathOperator","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\MathOperator.lua"]},{"name":"Player","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Player.lua"]},{"name":"PlayerId","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\PlayerId.lua"]},{"name":"Primitives","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Primitives.lua"]},{"name":"StoredKey","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\StoredKey.lua"]},{"name":"Team","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Team.lua"]},{"name":"Type","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Type.lua"]},{"name":"URL","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\URL.lua"]},{"name":"UserInput","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\UserInput.lua"]},{"name":"Vector","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Vector.lua"]}]},{"name":"CmdrClient","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\init.lua"],"children":[{"name":"CmdrInterface","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\CmdrInterface\\init.lua"],"children":[{"name":"AutoComplete","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\CmdrInterface\\AutoComplete.lua"]},{"name":"Window","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\CmdrInterface\\Window.lua"]}]},{"name":"DefaultEventHandlers","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\DefaultEventHandlers.lua"]}]},{"name":"CreateGui","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CreateGui.lua"]},{"name":"Initialize","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Initialize.lua"]},{"name":"Shared","className":"Folder","children":[{"name":"Argument","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Argument.lua"]},{"name":"Command","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Command.lua"]},{"name":"Dispatcher","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Dispatcher.lua"]},{"name":"Registry","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Registry.lua"]},{"name":"Util","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Util.lua"]}]}]}]},{"name":"evaera_matter@0.6.2","className":"Folder","children":[{"name":"TestEZ","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\TestEZ.lua"]},{"name":"matter","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\init.lua","Packages\\_Index\\evaera_matter@0.6.2\\matter\\default.project.json"],"children":[{"name":"Loop","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\Loop.lua"]},{"name":"Loop.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\Loop.spec.lua"]},{"name":"Queue","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\Queue.lua"]},{"name":"World","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\World.lua"]},{"name":"World.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\World.spec.lua"]},{"name":"archetype","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\archetype.lua"]},{"name":"archetype.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\archetype.spec.lua"]},{"name":"component","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\component.lua"]},{"name":"component.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\component.spec.lua"]},{"name":"debugger","className":"Folder","children":[{"name":"EventBridge","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\EventBridge.lua"]},{"name":"clientBindings","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\clientBindings.lua"]},{"name":"debugger","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\debugger.lua"]},{"name":"formatTable","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\formatTable.lua"]},{"name":"hookWidgets","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\hookWidgets.lua"]},{"name":"hookWorld","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\hookWorld.lua"]},{"name":"mouseHighlight","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\mouseHighlight.lua"]},{"name":"ui","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\ui.lua"]},{"name":"widgets","className":"Folder","children":[{"name":"codeText","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\codeText.lua"]},{"name":"container","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\container.lua"]},{"name":"entityInspect","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\entityInspect.lua"]},{"name":"errorInspect","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\errorInspect.lua"]},{"name":"frame","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\frame.lua"]},{"name":"hoverInspect","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\hoverInspect.lua"]},{"name":"link","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\link.lua"]},{"name":"panel","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\panel.lua"]},{"name":"queryInspect","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\queryInspect.lua"]},{"name":"realmSwitch","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\realmSwitch.lua"]},{"name":"selectionList","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\selectionList.lua"]},{"name":"tooltip","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\tooltip.lua"]},{"name":"valueInspect","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\valueInspect.lua"]},{"name":"worldInspect","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\worldInspect.lua"]}]}]},{"name":"hooks","className":"Folder","children":[{"name":"log","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\log.lua"]},{"name":"useDeltaTime","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useDeltaTime.lua"]},{"name":"useEvent","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useEvent.lua"]},{"name":"useEvent.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useEvent.spec.lua"]},{"name":"useThrottle","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useThrottle.lua"]}]},{"name":"immutable","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\immutable.lua"]},{"name":"mock","className":"Folder","children":[{"name":"BindableEvent","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\mock\\BindableEvent.lua"]}]},{"name":"rollingAverage","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\rollingAverage.lua"]},{"name":"topoRuntime","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\topoRuntime.lua"]},{"name":"topoRuntime.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\topoRuntime.spec.lua"]}]}]},{"name":"roblox_testez@0.4.1","className":"Folder","children":[{"name":"testez","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\init.lua","Packages\\_Index\\roblox_testez@0.4.1\\testez\\default.project.json"],"children":[{"name":"Context","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Context.lua"]},{"name":"Expectation","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Expectation.lua"]},{"name":"ExpectationContext","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\ExpectationContext.lua"]},{"name":"LifecycleHooks","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\LifecycleHooks.lua"]},{"name":"Reporters","className":"Folder","children":[{"name":"TeamCityReporter","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Reporters\\TeamCityReporter.lua"]},{"name":"TextReporter","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Reporters\\TextReporter.lua"]},{"name":"TextReporterQuiet","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Reporters\\TextReporterQuiet.lua"]}]},{"name":"TestBootstrap","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestBootstrap.lua"]},{"name":"TestEnum","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestEnum.lua"]},{"name":"TestPlan","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestPlan.lua"]},{"name":"TestPlanner","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestPlanner.lua"]},{"name":"TestResults","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestResults.lua"]},{"name":"TestRunner","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestRunner.lua"]},{"name":"TestSession","className":"ModuleScript","filePaths":["Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestSession.lua"]}]}]},{"name":"sleitnick_signal@1.5.0","className":"Folder","children":[{"name":"signal","className":"ModuleScript","filePaths":["Packages\\_Index\\sleitnick_signal@1.5.0\\signal\\init.lua"],"children":[{"name":"init.spec","className":"ModuleScript","filePaths":["Packages\\_Index\\sleitnick_signal@1.5.0\\signal\\init.spec.lua"]},{"name":"wally","className":"ModuleScript","filePaths":["Packages\\_Index\\sleitnick_signal@1.5.0\\signal\\wally.toml"]}]}]},{"name":"uncontained0_red@1.2.2","className":"Folder","children":[{"name":"red","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\init.luau","Packages\\_Index\\uncontained0_red@1.2.2\\red\\default.project.json"],"children":[{"name":"Net","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Net\\init.luau"],"children":[{"name":"Event","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Net\\Event.luau"]},{"name":"Serdes","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Net\\Serdes.luau"]}]},{"name":"Util","className":"Folder","children":[{"name":"Bin","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Bin.luau"]},{"name":"Clock","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Clock.luau"]},{"name":"Collection","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Collection.luau"]},{"name":"Promise","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Promise.luau"]},{"name":"Ratelimit","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Ratelimit.luau"]},{"name":"Signal","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Signal.luau"]},{"name":"Spawn","className":"ModuleScript","filePaths":["Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Spawn.luau"]}]}]}]}]},{"name":"cmdr","className":"ModuleScript","filePaths":["Packages\\cmdr.lua"]},{"name":"matter","className":"ModuleScript","filePaths":["Packages\\matter.lua"]},{"name":"red","className":"ModuleScript","filePaths":["Packages\\red.lua"]},{"name":"signal","className":"ModuleScript","filePaths":["Packages\\signal.lua"]}]}]},{"name":"ServerScriptService","className":"ServerScriptService","children":[{"name":"CollisionGroup","className":"Script","filePaths":["src/ServerScriptService\\CollisionGroup.server.lua"]},{"name":"Commands","className":"Script","filePaths":["src/ServerScriptService\\Commands.server.lua"]},{"name":"GameManager","className":"Script","filePaths":["src/ServerScriptService\\GameManager.server.lua"]},{"name":"Tower","className":"Script","filePaths":["src/ServerScriptService\\Tower.server.lua"]},{"name":"datastore","className":"Script","filePaths":["src/ServerScriptService\\datastore.server.lua"]}]},{"name":"ServerStorage","className":"ServerStorage","children":[{"name":"Cmdr","className":"Folder","children":[{"name":"Commands","className":"Folder","children":[{"name":"DefaultAdmin","className":"Folder","children":[{"name":"EquipTower","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\EquipTower.lua"]},{"name":"clearAllEntity","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\clearAllEntity.lua"]},{"name":"clearAllEntityServer","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\clearAllEntityServer.lua"]},{"name":"giveTowerServer","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\giveTowerServer.lua"]},{"name":"spawnEntity","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\spawnEntity.lua"]},{"name":"spawnEntityServer","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\spawnEntityServer.lua"]},{"name":"timer","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\timer.lua"]},{"name":"timerServer","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\timerServer.lua"]}]},{"name":"Utils","className":"Folder"}]},{"name":"Hooks","className":"Folder","children":[{"name":"BeforeRun","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Hooks\\BeforeRun.lua"]}]},{"name":"Types","className":"Folder","children":[{"name":"Entity","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Types\\Entity.lua"]},{"name":"Tower","className":"ModuleScript","filePaths":["src/ServerStorage\\Cmdr\\Types\\Tower.lua"]}]}]},{"name":"MapLoader","className":"ModuleScript","filePaths":["src/ServerStorage\\MapLoader.lua"]},{"name":"Maps","className":"Folder","children":[{"name":"Zombieland","className":"ModuleScript","filePaths":["src/ServerStorage\\Maps\\Zombieland.lua"]}]},{"name":"PlayerManager","className":"Folder","children":[{"name":"PlayerInterface","className":"ModuleScript","filePaths":["src/ServerStorage\\PlayerManager\\PlayerInterface.lua"]},{"name":"SessionData","className":"ModuleScript","filePaths":["src/ServerStorage\\PlayerManager\\SessionData.lua"]},{"name":"Template","className":"ModuleScript","filePaths":["src/ServerStorage\\PlayerManager\\Template.lua"]}]},{"name":"Services","className":"Folder","children":[{"name":"BaseController","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\BaseController.lua"]},{"name":"LogsSystem","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\LogsSystem\\init.lua"],"children":[{"name":"Request","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\LogsSystem\\Request.lua"]},{"name":"TrelloConnections","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\LogsSystem\\TrelloConnections.lua"]}]},{"name":"SpawnEntity","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\SpawnEntity.lua"]},{"name":"Timer","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\Timer.lua"]},{"name":"TimerModule","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\TimerModule.lua"]},{"name":"TowersController","className":"Folder","children":[{"name":"Settings","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\TowersController\\Settings.lua"]},{"name":"TowerInterface","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\TowersController\\TowerInterface.lua"]},{"name":"TowerUtils","className":"Folder","children":[{"name":"DealDamage","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\TowersController\\TowerUtils\\DealDamage.lua"]},{"name":"FindTarget","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\TowersController\\TowerUtils\\FindTarget.lua"]}]}]},{"name":"WavesController","className":"Folder","children":[{"name":"InfiniteController","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\WavesController\\InfiniteController.lua"]},{"name":"SequenceController","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\WavesController\\SequenceController.lua"]},{"name":"Settings","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\WavesController\\Settings.lua"]},{"name":"WaveController","className":"ModuleScript","filePaths":["src/ServerStorage\\Services\\WavesController\\WaveController.lua"]}]}]},{"name":"Systems","className":"Folder","children":[{"name":"EntitiesSystems","className":"Folder","children":[{"name":"SummonEntitySystem","className":"ModuleScript","filePaths":["src/ServerStorage\\Systems\\EntitiesSystems\\SummonEntitySystem.lua"]},{"name":"WalkingEntitySystem","className":"ModuleScript","filePaths":["src/ServerStorage\\Systems\\EntitiesSystems\\WalkingEntitySystem.lua"]}]},{"name":"TowerSystems","className":"Folder","children":[{"name":"ShootingTowerSystem","className":"ModuleScript","filePaths":["src/ServerStorage\\Systems\\TowerSystems\\ShootingTowerSystem.lua"]}]}]},{"name":"World","className":"ModuleScript","filePaths":["src/ServerStorage\\World.lua"]},{"name":"Libraries","className":"Folder","children":[{"name":"_Index","className":"Folder","children":[{"name":"skylord-103_suphisdatastoremodule@1.0.0","className":"Folder","children":[{"name":"suphisdatastoremodule","className":"ModuleScript","filePaths":["ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\init.lua","ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\default.project.json"],"children":[{"name":"Proxy","className":"ModuleScript","filePaths":["ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\Proxy.lua"]},{"name":"Signal","className":"ModuleScript","filePaths":["ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\Signal.lua"]},{"name":"SynchronousTaskManager","className":"ModuleScript","filePaths":["ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\SynchronousTaskManager.lua"]}]}]}]},{"name":"datastore","className":"ModuleScript","filePaths":["ServerPackages\\datastore.lua"]}]}]},{"name":"SoundService","className":"SoundService"},{"name":"StarterPlayer","className":"StarterPlayer","children":[{"name":"StarterPlayerScripts","className":"StarterPlayerScripts","children":[{"name":"Controllers","className":"Folder","children":[{"name":"Cmdr","className":"LocalScript","filePaths":["src/StarterPlayerScripts\\Controllers\\Cmdr.client.lua"]},{"name":"HotbarController","className":"Folder","children":[{"name":"HotbarController","className":"ModuleScript","filePaths":["src/StarterPlayerScripts\\Controllers\\HotbarController\\HotbarController.lua"]},{"name":"SlotController","className":"ModuleScript","filePaths":["src/StarterPlayerScripts\\Controllers\\HotbarController\\SlotController.lua"]}]},{"name":"TowerUpgradeController","className":"Folder","children":[{"name":"ButtonController","className":"ModuleScript","filePaths":["src/StarterPlayerScripts\\Controllers\\TowerUpgradeController\\ButtonController.lua"]},{"name":"ViewportController","className":"ModuleScript","filePaths":["src/StarterPlayerScripts\\Controllers\\TowerUpgradeController\\ViewportController.lua"]}]}]},{"name":"DisableService","className":"LocalScript","filePaths":["src/StarterPlayerScripts\\DisableService.client.lua"]},{"name":"EntityAnimation","className":"LocalScript","filePaths":["src/StarterPlayerScripts\\EntityAnimation.client.lua"]},{"name":"Placement","className":"LocalScript","filePaths":["src/StarterPlayerScripts\\Placement.client.lua"]},{"name":"TimerController","className":"LocalScript","filePaths":["src/StarterPlayerScripts\\TimerController.client.lua"]}]}]},{"name":"Workspace","className":"Workspace","children":[{"name":"Baseplate","className":"Part"},{"name":"LoadedMap","className":"Folder","children":[{"name":"Entities","className":"Folder"},{"name":"Towers","className":"Folder"}]},{"name":"PlaceholderTowers","className":"Folder"}]}]}
+{
+  "name": "GameAdventure",
+  "className": "DataModel",
+  "filePaths": ["default.project.json"],
+  "children": [
+    { "name": "Lighting", "className": "Lighting" },
+    {
+      "name": "ReplicatedStorage",
+      "className": "ReplicatedStorage",
+      "children": [
+        {
+          "name": "Enums",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Colors",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Enums\\Colors.lua"]
+            }
+          ]
+        },
+        {
+          "name": "Shared",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Components",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Shared\\Components.lua"]
+            },
+            {
+              "name": "GetElement",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Shared\\GetElement.lua"]
+            },
+            {
+              "name": "GetEnum",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Shared\\GetEnum.lua"]
+            },
+            {
+              "name": "MakeReadOnly",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Shared\\MakeReadOnly.lua"]
+            },
+            {
+              "name": "RaycastMouse",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Shared\\RaycastMouse.luau"]
+            },
+            {
+              "name": "Start",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Shared\\Start.lua"]
+            }
+          ]
+        },
+        {
+          "name": "Towers",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Mushroom",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Towers\\Mushroom.lua"]
+            },
+            {
+              "name": "Peashooter",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Towers\\Peashooter.lua"]
+            },
+            {
+              "name": "Toilet",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Towers\\Toilet.lua"]
+            }
+          ]
+        },
+        {
+          "name": "entities",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Robot",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\entities\\Robot.lua"]
+            },
+            {
+              "name": "Wizzard",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\entities\\Wizzard.lua"]
+            },
+            {
+              "name": "Zombie",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\entities\\Zombie.lua"]
+            }
+          ]
+        },
+        {
+          "name": "Libraries",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "_Index",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "evaera_cmdr@1.12.0",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "cmdr",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\init.lua",
+                        "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\default.project.json"
+                      ],
+                      "children": [
+                        {
+                          "name": "BuiltInCommands",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "Admin",
+                              "className": "Folder",
+                              "children": [
+                                {
+                                  "name": "announce",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\announce.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "announceServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\announceServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "gotoPlace",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\gotoPlace.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "gotoPlaceServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\gotoPlaceServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "kick",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\kick.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "kickServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\kickServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "kill",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\kill.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "killServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\killServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "respawn",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\respawn.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "respawnServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\respawnServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "teleport",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\teleport.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "teleportServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Admin\\teleportServer.lua"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Debug",
+                              "className": "Folder",
+                              "children": [
+                                {
+                                  "name": "blink",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\blink.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "fetch",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\fetch.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "fetchServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\fetchServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "getPlayerPlaceInstance",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\getPlayerPlaceInstance.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "getPlayerPlaceInstanceServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\getPlayerPlaceInstanceServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "position",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\position.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "thru",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\thru.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "uptime",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\uptime.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "uptimeServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\uptimeServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "version",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Debug\\version.lua"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Utility",
+                              "className": "Folder",
+                              "children": [
+                                {
+                                  "name": "alias",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\alias.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "bind",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\bind.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "clear",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\clear.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "convertTimestamp",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\convertTimestamp.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "echo",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\echo.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "edit",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\edit.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "history",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\history.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "hover",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\hover.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "jsonArrayDecode",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\jsonArrayDecode.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "jsonArrayEncode",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\jsonArrayEncode.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "len",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\len.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "math",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\math.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "pick",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\pick.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "rand",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\rand.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "replace",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\replace.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "resolve",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\resolve.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "run",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\run.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "runLines",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\runLines.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "runif",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\runif.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "unbind",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\unbind.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "var",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\var.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "varServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\varServer.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "varSet",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\varSet.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "varSetServer",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\Utility\\varSetServer.lua"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "help",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInCommands\\help.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "BuiltInTypes",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "BindableResource",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\BindableResource.lua"
+                              ]
+                            },
+                            {
+                              "name": "BrickColor",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\BrickColor.lua"
+                              ]
+                            },
+                            {
+                              "name": "Color3",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Color3.lua"
+                              ]
+                            },
+                            {
+                              "name": "Command",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Command.lua"
+                              ]
+                            },
+                            {
+                              "name": "ConditionFunction",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\ConditionFunction.lua"
+                              ]
+                            },
+                            {
+                              "name": "Duration",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Duration.lua"
+                              ]
+                            },
+                            {
+                              "name": "JSON",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\JSON.lua"
+                              ]
+                            },
+                            {
+                              "name": "MathOperator",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\MathOperator.lua"
+                              ]
+                            },
+                            {
+                              "name": "Player",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Player.lua"
+                              ]
+                            },
+                            {
+                              "name": "PlayerId",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\PlayerId.lua"
+                              ]
+                            },
+                            {
+                              "name": "Primitives",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Primitives.lua"
+                              ]
+                            },
+                            {
+                              "name": "StoredKey",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\StoredKey.lua"
+                              ]
+                            },
+                            {
+                              "name": "Team",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Team.lua"
+                              ]
+                            },
+                            {
+                              "name": "Type",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Type.lua"
+                              ]
+                            },
+                            {
+                              "name": "URL",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\URL.lua"
+                              ]
+                            },
+                            {
+                              "name": "UserInput",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\UserInput.lua"
+                              ]
+                            },
+                            {
+                              "name": "Vector",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\BuiltInTypes\\Vector.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "CmdrClient",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\init.lua"
+                          ],
+                          "children": [
+                            {
+                              "name": "CmdrInterface",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\CmdrInterface\\init.lua"
+                              ],
+                              "children": [
+                                {
+                                  "name": "AutoComplete",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\CmdrInterface\\AutoComplete.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "Window",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\CmdrInterface\\Window.lua"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "DefaultEventHandlers",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CmdrClient\\DefaultEventHandlers.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "CreateGui",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\CreateGui.lua"
+                          ]
+                        },
+                        {
+                          "name": "Initialize",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Initialize.lua"
+                          ]
+                        },
+                        {
+                          "name": "Shared",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "Argument",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Argument.lua"
+                              ]
+                            },
+                            {
+                              "name": "Command",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Command.lua"
+                              ]
+                            },
+                            {
+                              "name": "Dispatcher",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Dispatcher.lua"
+                              ]
+                            },
+                            {
+                              "name": "Registry",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Registry.lua"
+                              ]
+                            },
+                            {
+                              "name": "Util",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_cmdr@1.12.0\\cmdr\\Cmdr\\Shared\\Util.lua"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "evaera_matter@0.6.2",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "TestEZ",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "Packages\\_Index\\evaera_matter@0.6.2\\TestEZ.lua"
+                      ]
+                    },
+                    {
+                      "name": "matter",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\init.lua",
+                        "Packages\\_Index\\evaera_matter@0.6.2\\matter\\default.project.json"
+                      ],
+                      "children": [
+                        {
+                          "name": "Loop",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\Loop.lua"
+                          ]
+                        },
+                        {
+                          "name": "Loop.spec",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\Loop.spec.lua"
+                          ]
+                        },
+                        {
+                          "name": "Queue",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\Queue.lua"
+                          ]
+                        },
+                        {
+                          "name": "World",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\World.lua"
+                          ]
+                        },
+                        {
+                          "name": "World.spec",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\World.spec.lua"
+                          ]
+                        },
+                        {
+                          "name": "archetype",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\archetype.lua"
+                          ]
+                        },
+                        {
+                          "name": "archetype.spec",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\archetype.spec.lua"
+                          ]
+                        },
+                        {
+                          "name": "component",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\component.lua"
+                          ]
+                        },
+                        {
+                          "name": "component.spec",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\component.spec.lua"
+                          ]
+                        },
+                        {
+                          "name": "debugger",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "EventBridge",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\EventBridge.lua"
+                              ]
+                            },
+                            {
+                              "name": "clientBindings",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\clientBindings.lua"
+                              ]
+                            },
+                            {
+                              "name": "debugger",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\debugger.lua"
+                              ]
+                            },
+                            {
+                              "name": "formatTable",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\formatTable.lua"
+                              ]
+                            },
+                            {
+                              "name": "hookWidgets",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\hookWidgets.lua"
+                              ]
+                            },
+                            {
+                              "name": "hookWorld",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\hookWorld.lua"
+                              ]
+                            },
+                            {
+                              "name": "mouseHighlight",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\mouseHighlight.lua"
+                              ]
+                            },
+                            {
+                              "name": "ui",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\ui.lua"
+                              ]
+                            },
+                            {
+                              "name": "widgets",
+                              "className": "Folder",
+                              "children": [
+                                {
+                                  "name": "codeText",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\codeText.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "container",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\container.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "entityInspect",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\entityInspect.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "errorInspect",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\errorInspect.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "frame",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\frame.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "hoverInspect",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\hoverInspect.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "link",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\link.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "panel",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\panel.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "queryInspect",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\queryInspect.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "realmSwitch",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\realmSwitch.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "selectionList",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\selectionList.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "tooltip",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\tooltip.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "valueInspect",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\valueInspect.lua"
+                                  ]
+                                },
+                                {
+                                  "name": "worldInspect",
+                                  "className": "ModuleScript",
+                                  "filePaths": [
+                                    "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\debugger\\widgets\\worldInspect.lua"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "hooks",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "log",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\log.lua"
+                              ]
+                            },
+                            {
+                              "name": "useDeltaTime",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useDeltaTime.lua"
+                              ]
+                            },
+                            {
+                              "name": "useEvent",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useEvent.lua"
+                              ]
+                            },
+                            {
+                              "name": "useEvent.spec",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useEvent.spec.lua"
+                              ]
+                            },
+                            {
+                              "name": "useThrottle",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\hooks\\useThrottle.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "immutable",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\immutable.lua"
+                          ]
+                        },
+                        {
+                          "name": "mock",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "BindableEvent",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\mock\\BindableEvent.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "rollingAverage",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\rollingAverage.lua"
+                          ]
+                        },
+                        {
+                          "name": "topoRuntime",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\topoRuntime.lua"
+                          ]
+                        },
+                        {
+                          "name": "topoRuntime.spec",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\evaera_matter@0.6.2\\matter\\lib\\topoRuntime.spec.lua"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "roblox_testez@0.4.1",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "testez",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\init.lua",
+                        "Packages\\_Index\\roblox_testez@0.4.1\\testez\\default.project.json"
+                      ],
+                      "children": [
+                        {
+                          "name": "Context",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Context.lua"
+                          ]
+                        },
+                        {
+                          "name": "Expectation",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Expectation.lua"
+                          ]
+                        },
+                        {
+                          "name": "ExpectationContext",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\ExpectationContext.lua"
+                          ]
+                        },
+                        {
+                          "name": "LifecycleHooks",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\LifecycleHooks.lua"
+                          ]
+                        },
+                        {
+                          "name": "Reporters",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "TeamCityReporter",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Reporters\\TeamCityReporter.lua"
+                              ]
+                            },
+                            {
+                              "name": "TextReporter",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Reporters\\TextReporter.lua"
+                              ]
+                            },
+                            {
+                              "name": "TextReporterQuiet",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\Reporters\\TextReporterQuiet.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "TestBootstrap",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestBootstrap.lua"
+                          ]
+                        },
+                        {
+                          "name": "TestEnum",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestEnum.lua"
+                          ]
+                        },
+                        {
+                          "name": "TestPlan",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestPlan.lua"
+                          ]
+                        },
+                        {
+                          "name": "TestPlanner",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestPlanner.lua"
+                          ]
+                        },
+                        {
+                          "name": "TestResults",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestResults.lua"
+                          ]
+                        },
+                        {
+                          "name": "TestRunner",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestRunner.lua"
+                          ]
+                        },
+                        {
+                          "name": "TestSession",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\roblox_testez@0.4.1\\testez\\src\\TestSession.lua"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "sleitnick_signal@1.5.0",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "signal",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "Packages\\_Index\\sleitnick_signal@1.5.0\\signal\\init.lua"
+                      ],
+                      "children": [
+                        {
+                          "name": "init.spec",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\sleitnick_signal@1.5.0\\signal\\init.spec.lua"
+                          ]
+                        },
+                        {
+                          "name": "wally",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\sleitnick_signal@1.5.0\\signal\\wally.toml"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "uncontained0_red@1.2.2",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "red",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\init.luau",
+                        "Packages\\_Index\\uncontained0_red@1.2.2\\red\\default.project.json"
+                      ],
+                      "children": [
+                        {
+                          "name": "Net",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Net\\init.luau"
+                          ],
+                          "children": [
+                            {
+                              "name": "Event",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Net\\Event.luau"
+                              ]
+                            },
+                            {
+                              "name": "Serdes",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Net\\Serdes.luau"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Util",
+                          "className": "Folder",
+                          "children": [
+                            {
+                              "name": "Bin",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Bin.luau"
+                              ]
+                            },
+                            {
+                              "name": "Clock",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Clock.luau"
+                              ]
+                            },
+                            {
+                              "name": "Collection",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Collection.luau"
+                              ]
+                            },
+                            {
+                              "name": "Promise",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Promise.luau"
+                              ]
+                            },
+                            {
+                              "name": "Ratelimit",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Ratelimit.luau"
+                              ]
+                            },
+                            {
+                              "name": "Signal",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Signal.luau"
+                              ]
+                            },
+                            {
+                              "name": "Spawn",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "Packages\\_Index\\uncontained0_red@1.2.2\\red\\lib\\Util\\Spawn.luau"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "cmdr",
+              "className": "ModuleScript",
+              "filePaths": ["Packages\\cmdr.lua"]
+            },
+            {
+              "name": "matter",
+              "className": "ModuleScript",
+              "filePaths": ["Packages\\matter.lua"]
+            },
+            {
+              "name": "red",
+              "className": "ModuleScript",
+              "filePaths": ["Packages\\red.lua"]
+            },
+            {
+              "name": "signal",
+              "className": "ModuleScript",
+              "filePaths": ["Packages\\signal.lua"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ServerScriptService",
+      "className": "ServerScriptService",
+      "children": [
+        {
+          "name": "CollisionGroup",
+          "className": "Script",
+          "filePaths": ["src/ServerScriptService\\CollisionGroup.server.lua"]
+        },
+        {
+          "name": "Commands",
+          "className": "Script",
+          "filePaths": ["src/ServerScriptService\\Commands.server.lua"]
+        },
+        {
+          "name": "GameManager",
+          "className": "Script",
+          "filePaths": ["src/ServerScriptService\\GameManager.server.lua"]
+        },
+        {
+          "name": "Tower",
+          "className": "Script",
+          "filePaths": ["src/ServerScriptService\\Tower.server.lua"]
+        },
+        {
+          "name": "datastore",
+          "className": "Script",
+          "filePaths": ["src/ServerScriptService\\datastore.server.lua"]
+        }
+      ]
+    },
+    {
+      "name": "ServerStorage",
+      "className": "ServerStorage",
+      "children": [
+        {
+          "name": "Cmdr",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Commands",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "DefaultAdmin",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "EquipTower",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\EquipTower.lua"
+                      ]
+                    },
+                    {
+                      "name": "clearAllEntity",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\clearAllEntity.lua"
+                      ]
+                    },
+                    {
+                      "name": "clearAllEntityServer",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\clearAllEntityServer.lua"
+                      ]
+                    },
+                    {
+                      "name": "giveTowerServer",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\giveTowerServer.lua"
+                      ]
+                    },
+                    {
+                      "name": "spawnEntity",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\spawnEntity.lua"
+                      ]
+                    },
+                    {
+                      "name": "spawnEntityServer",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\spawnEntityServer.lua"
+                      ]
+                    },
+                    {
+                      "name": "timer",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\timer.lua"
+                      ]
+                    },
+                    {
+                      "name": "timerServer",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Cmdr\\Commands\\DefaultAdmin\\timerServer.lua"
+                      ]
+                    }
+                  ]
+                },
+                { "name": "Utils", "className": "Folder" }
+              ]
+            },
+            {
+              "name": "Hooks",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "BeforeRun",
+                  "className": "ModuleScript",
+                  "filePaths": ["src/ServerStorage\\Cmdr\\Hooks\\BeforeRun.lua"]
+                }
+              ]
+            },
+            {
+              "name": "Types",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "Entity",
+                  "className": "ModuleScript",
+                  "filePaths": ["src/ServerStorage\\Cmdr\\Types\\Entity.lua"]
+                },
+                {
+                  "name": "Tower",
+                  "className": "ModuleScript",
+                  "filePaths": ["src/ServerStorage\\Cmdr\\Types\\Tower.lua"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MapLoader",
+          "className": "ModuleScript",
+          "filePaths": ["src/ServerStorage\\MapLoader.lua"]
+        },
+        {
+          "name": "Maps",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Zombieland",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\Maps\\Zombieland.lua"]
+            }
+          ]
+        },
+        {
+          "name": "PlayerManager",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "PlayerInterface",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerStorage\\PlayerManager\\PlayerInterface.lua"
+              ]
+            },
+            {
+              "name": "SessionData",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\PlayerManager\\SessionData.lua"]
+            },
+            {
+              "name": "Template",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\PlayerManager\\Template.lua"]
+            }
+          ]
+        },
+        {
+          "name": "Services",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "BaseController",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\Services\\BaseController.lua"]
+            },
+            {
+              "name": "LogsSystem",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerStorage\\Services\\LogsSystem\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "Request",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\LogsSystem\\Request.lua"
+                  ]
+                },
+                {
+                  "name": "TrelloConnections",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\LogsSystem\\TrelloConnections.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "SpawnEntity",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\Services\\SpawnEntity.lua"]
+            },
+            {
+              "name": "Timer",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\Services\\Timer.lua"]
+            },
+            {
+              "name": "TimerModule",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerStorage\\Services\\TimerModule.lua"]
+            },
+            {
+              "name": "TowersController",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "Settings",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\TowersController\\Settings.lua"
+                  ]
+                },
+                {
+                  "name": "TowerInterface",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\TowersController\\TowerInterface.lua"
+                  ]
+                },
+                {
+                  "name": "TowerUtils",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "DealDamage",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Services\\TowersController\\TowerUtils\\DealDamage.lua"
+                      ]
+                    },
+                    {
+                      "name": "FindTarget",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/ServerStorage\\Services\\TowersController\\TowerUtils\\FindTarget.lua"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "WavesController",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "InfiniteController",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\WavesController\\InfiniteController.lua"
+                  ]
+                },
+                {
+                  "name": "SequenceController",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\WavesController\\SequenceController.lua"
+                  ]
+                },
+                {
+                  "name": "Settings",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\WavesController\\Settings.lua"
+                  ]
+                },
+                {
+                  "name": "WaveController",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Services\\WavesController\\WaveController.lua"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Systems",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "EntitiesSystems",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "SummonEntitySystem",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Systems\\EntitiesSystems\\SummonEntitySystem.lua"
+                  ]
+                },
+                {
+                  "name": "WalkingEntitySystem",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Systems\\EntitiesSystems\\WalkingEntitySystem.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "TowerSystems",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "ShootingTowerSystem",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerStorage\\Systems\\TowerSystems\\ShootingTowerSystem.lua"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "World",
+          "className": "ModuleScript",
+          "filePaths": ["src/ServerStorage\\World.lua"]
+        },
+        {
+          "name": "Libraries",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "_Index",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "skylord-103_suphisdatastoremodule@1.0.0",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "suphisdatastoremodule",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\init.lua",
+                        "ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\default.project.json"
+                      ],
+                      "children": [
+                        {
+                          "name": "Proxy",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\Proxy.lua"
+                          ]
+                        },
+                        {
+                          "name": "Signal",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\Signal.lua"
+                          ]
+                        },
+                        {
+                          "name": "SynchronousTaskManager",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "ServerPackages\\_Index\\skylord-103_suphisdatastoremodule@1.0.0\\suphisdatastoremodule\\src\\SynchronousTaskManager.lua"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "datastore",
+              "className": "ModuleScript",
+              "filePaths": ["ServerPackages\\datastore.lua"]
+            }
+          ]
+        }
+      ]
+    },
+    { "name": "SoundService", "className": "SoundService" },
+    {
+      "name": "StarterPlayer",
+      "className": "StarterPlayer",
+      "children": [
+        {
+          "name": "StarterPlayerScripts",
+          "className": "StarterPlayerScripts",
+          "children": [
+            {
+              "name": "Controllers",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "Cmdr",
+                  "className": "LocalScript",
+                  "filePaths": [
+                    "src/StarterPlayerScripts\\Controllers\\Cmdr.client.lua"
+                  ]
+                },
+                {
+                  "name": "HotbarController",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "HotbarController",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/StarterPlayerScripts\\Controllers\\HotbarController\\HotbarController.lua"
+                      ]
+                    },
+                    {
+                      "name": "SlotController",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/StarterPlayerScripts\\Controllers\\HotbarController\\SlotController.lua"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "TowerUpgradeController",
+                  "className": "Folder",
+                  "children": [
+                    {
+                      "name": "ButtonController",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/StarterPlayerScripts\\Controllers\\TowerUpgradeController\\ButtonController.lua"
+                      ]
+                    },
+                    {
+                      "name": "ViewportController",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/StarterPlayerScripts\\Controllers\\TowerUpgradeController\\ViewportController.lua"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "DisableService",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayerScripts\\DisableService.client.lua"
+              ]
+            },
+            {
+              "name": "EntityAnimation",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayerScripts\\EntityAnimation.client.lua"
+              ]
+            },
+            {
+              "name": "Placement",
+              "className": "LocalScript",
+              "filePaths": ["src/StarterPlayerScripts\\Placement.client.lua"]
+            },
+            {
+              "name": "TimerController",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayerScripts\\TimerController.client.lua"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Workspace",
+      "className": "Workspace",
+      "children": [
+        { "name": "Baseplate", "className": "Part" },
+        {
+          "name": "LoadedMap",
+          "className": "Folder",
+          "children": [
+            { "name": "Entities", "className": "Folder" },
+            { "name": "Towers", "className": "Folder" }
+          ]
+        },
+        { "name": "PlaceholderTowers", "className": "Folder" }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Signal = require(ReplicatedStorage.Libraries.signal)
+local red = require(ReplicatedStorage.Libraries.red)
+local BaseNetwork = red.Server("BaseNetwork")
 
 local BaseController = {}
 local CurrentBase = nil
@@ -19,15 +21,17 @@ function new(MaxHealth: number)
             __index = BaseController
         }
     )
-
     CurrentBase = self
+    BaseNetwork:FireAll("OnUpdateHealth", self.MaxHealth, self.MaxHealth)
+
     return self
 end
 
 function BaseController.TakeDamage(self: BaseController, Damage: number)
     if self.Health > 0 then
         self.Health -= Damage
-        self.OnDamaged:Fire(Damage)
+        self.OnDamaged:Fire(self.Health)
+        BaseNetwork:FireAll("OnUpdateHealth", self.MaxHealth, self.Health)
     else
         self.OnDestroyed:Fire()
     end

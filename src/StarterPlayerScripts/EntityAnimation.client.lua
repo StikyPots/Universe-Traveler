@@ -34,11 +34,14 @@ CollectionService:GetInstanceAddedSignal("Entities"):Connect(function(Entity: In
     local Animation = Instance.new("Animation")
     Animation.AnimationId = animPath..AnimationId
 
+
     local Humanoid = Entity:WaitForChild("Humanoid")
 
 
 
     local Animator: Animator = Humanoid:FindFirstChild("Animator")
+
+    
 
     if Animator then
         local AnimationTrack = Animator:LoadAnimation(Animation)

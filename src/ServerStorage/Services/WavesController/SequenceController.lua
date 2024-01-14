@@ -1,3 +1,4 @@
+local CollectionService = game:GetService("CollectionService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
@@ -91,6 +92,13 @@ end
 
 function SequenceController.Finish(self: SequenceController)
     self.Finished = true
+    
+    local thread = task.defer(function()
+        for _, entity in CollectionService:GetTagged("Entities") do
+            entity:RemoveTag("Entities")
+            entity:Destroy()
+        end
+    end)
 end
 
 function SequenceController.skip(self: SequenceController)

@@ -1,7 +1,9 @@
 local replicatedStorage = game:GetService("ReplicatedStorage")
+local ServerStorage = game:GetService("ServerStorage")
 
 local matter = require(replicatedStorage.Libraries.matter)
 local components = require(replicatedStorage.Shared.Components)
+local Base = require(ServerStorage.Services.BaseController).GetCurrentBase()
 
 local WalkingEntitySystem = components("WalkingEntitySystem")
 
@@ -35,11 +37,10 @@ return function(world: matter.World)
                 Humanoid:MoveTo(Waypoints[i].Position)
                 Humanoid.MoveToFinished:Wait()
             end
+            Base:TakeDamage(Humanoid.Health)
             Model:Destroy()
             Model:RemoveTag("Entities")
-        end)
-
-        
+        end)  
     end
 end
 
