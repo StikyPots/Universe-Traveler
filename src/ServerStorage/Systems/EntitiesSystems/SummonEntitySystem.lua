@@ -6,7 +6,7 @@ local red = require(replicatedStorage.Libraries.red)
 local components = require(replicatedStorage.Shared.Components)
 local SummonEntitySystem = components("SummonEntitySystem")
 local SpawnEntityController = require(serverStorage.Services.SpawnEntity)
-
+local Base = require(serverStorage.Services.BaseController).GetCurrentBase()
 local AnimationNetwork = red.Server("AnimationNetwork")
 
 return function(world: matter.World)
@@ -41,6 +41,7 @@ return function(world: matter.World)
                 AnimationNetwork:FireAll("OnSummon", Model.Name, Humanoid)
                 SpawnEntityController("Zombie", i, world)
             end
+            Base:TakeDamage(Humanoid.Health)
             Model:Destroy()
             Model:RemoveTag("Entities")
         end)

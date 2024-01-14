@@ -11,7 +11,6 @@ local TowerInterface = require(ServerStorage.Services.TowersController.TowerInte
 
 --// constante
 local PlacementNetwork = red.Server("PlacementNetwork")
-local NotificationNetwork = red.Server("NotificationNetwork")
 
 
 PlacementNetwork:On("Placement", function(Player: Player, Name: string, CFrameV: CFrame)
@@ -21,9 +20,10 @@ PlacementNetwork:On("Placement", function(Player: Player, Name: string, CFrameV:
     local PlayerCoins = IPlayer.SessionData:Get("Coins")
     local TowerPrice = GetTowers(Name).price
 
-    print(PlayerCoins, TowerPrice)
+    -- print(PlayerCoins, TowerPrice)
+    -- print(IPlayer:HasTower(Name))
 
-    if not (PlayerCoins >= TowerPrice) then
+    if not (PlayerCoins >= TowerPrice) and IPlayer:HasTower(Name) then
         return
     end
 

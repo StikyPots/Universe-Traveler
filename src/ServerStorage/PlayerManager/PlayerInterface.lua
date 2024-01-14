@@ -30,8 +30,7 @@ function new(player: Player)
 
             --// Event Interactions
 
-            OnLevelUp = Signal.new() :: Signal.Signal;
-
+            OnLevelUp = Signal.new() :: Signal.Signal
         },
         {
             __index = super
@@ -42,6 +41,7 @@ function new(player: Player)
     self.Userdata:Open(DatastoreTemplates.UserdataTemplate)
     self.EquipTowers:Open(DatastoreTemplates.EquipTowers)
 
+    
 
     _Players[player.UserId] = self
 
@@ -117,6 +117,10 @@ function super.EquipTower(self: IPlayer, Tower: string, TowerStats: {Name: strin
     self.EquipTowers.Value[Tower] = TowerStats
 end
 
+
+function super.HasTower(self: IPlayer, TowerName: string): boolean
+    return self.EquipTowers.Value[TowerName] ~= nil
+end
 
 function super.GetTower(self: IPlayer, Name: string): {Name: string, Experience: number, Level: number}
     if not self.EquipTowers.Value[Name] then

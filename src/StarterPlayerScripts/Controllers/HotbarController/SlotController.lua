@@ -41,11 +41,9 @@ function super._addToList(self: SlotController)
     local ModelToClone: Model = ReplicatedStorage.Assets.Towers:FindFirstChild(self.Name)
 
     if not ModelToClone then
-        print("created")
         return
     end
 
-    print("hello, world")
 
    local RarityColors = GetEnums("Colors", "Rarity")
 
@@ -73,10 +71,11 @@ function super._addToList(self: SlotController)
         HumanoidRootPart.Position
     )
 
-    
-
+   
     slot.Parent = HotbarList
 end
+
+
 
 return {
     new = new

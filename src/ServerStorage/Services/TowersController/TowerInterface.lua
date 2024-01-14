@@ -55,7 +55,7 @@ function new(Player: Player, Name: string, CFrame: CFrame)
 
     self.PlayerTowerInfo = self.IPlayer:GetTower(self.Name) :: DatastoreTower
     self.Level = self.PlayerTowerInfo.Level
-    self._DAMAGECALCULATION = self.Damage[self.Updated] + self.Level * BASE_LEVELDAMAGE
+    self._DAMAGECALCULATION = self.Damage[self.Updated] + (self.Level - 1) * BASE_LEVELDAMAGE
     self._Component = components(string.format(SystemPrefix, self.Prefix))
 
 
@@ -87,10 +87,10 @@ function super.Spawn(self: ITower)
     self.Model:PivotTo(self.CFrame)
     self.Model.Parent = workspace.LoadedMap.Towers
 
-
+    self.Model:AddTag("TowerUpdateRotation")
     self.Model:SetAttribute("Id", self.Id)
 
-    
+
     World:spawnAt(self.Id, self._Component({
 
         Owner = self.Owner;
@@ -112,7 +112,7 @@ function super.Update(self: ITower)
 
     self.Updated += 1
 
-    self._DAMAGECALCULATION = self.Damage[self.Updated] + self.Level * BASE_LEVELDAMAGE
+    self._DAMAGECALCULATION = self.Damage[self.Updated] + (self.Level - 1) * BASE_LEVELDAMAGE
 
     World:replace(self.Id, self._Component({
         Owner = self.Owner;
@@ -129,7 +129,7 @@ function super.Delete(self: ITower)
     World:despawn(self.Id)
 
     print(_Towers)
-    self.IPlayer.SessionData:Update("Coins", math.round(self.Price * self.Updated / 1.5))
+    self.IPlayer.SessionData:Update("Coins", math.round(self.Price * self.Updated / 2))
 end
 
 

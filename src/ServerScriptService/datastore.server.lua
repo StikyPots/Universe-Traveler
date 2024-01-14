@@ -10,7 +10,6 @@ local GettingTower = Red.Server("GettingTower")
 
 Players.PlayerAdded:Connect(function(player)
     local Iplayer: PlayerInterface.IPlayer = PlayerInterface.new(player)
-    print(Iplayer.SessionData:Get("Coins"))
 
     GettingTower:On("GettingTower", function(player)
         local Iplayer = PlayerInterface.GetIPlayerFromPlayerInstance(player)
