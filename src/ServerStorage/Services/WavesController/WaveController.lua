@@ -16,7 +16,7 @@ local SystemPrefix = "%sSystem"
 
 -- Start(World, SystemsFolder)
 
-return function(name: string, amount: number)
+return function(name: string, amount: number, currentWave: number)
     local EntityInfo  = GetEntity(name)
     local EntityToSpawn = components(string.format(SystemPrefix, EntityInfo.System))
     local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap

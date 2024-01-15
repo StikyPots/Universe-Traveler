@@ -1,4 +1,5 @@
 local CollectionService = game:GetService("CollectionService")
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
@@ -10,6 +11,15 @@ local MapLoader = require(ServerStorage.MapLoader)
 local WaveController = require(script.Parent.WaveController)
 local World: matter.World = require(ServerStorage.World)
 local Start = require(ReplicatedStorage.Shared.Start)
+local PlayerInterface = require(ServerStorage.PlayerManager.PlayerInterface)
+local BaseModule = require(ServerStorage.Services.BaseController)
+local Constante = require(ReplicatedStorage.Enums.Constante)
+
+
+
+
+local BASE_COINS = 95
+local INCREMENT = 100
 
 
 local SystemsFolder = ServerStorage.Systems.EntitiesSystems
@@ -21,13 +31,15 @@ local SequenceController = {}
 
 export type SequenceController = typeof(SequenceController.new())
 
-function SequenceController.new(WavesNumber: number, Entities: {string})
+function SequenceController.new(WavesNumber: number, Entities: {string}, PlayersPreference: {Map: string, Difficulty: string})
     local self = setmetatable(
         {
             Entities = Entities;
             WavesNumber = WavesNumber;
             SpawnRate = WavesSettings.spawnRate,
             StartAmount = WavesSettings.StartAmount;
+            PlayersPreference = PlayersPreference,
+            Base = BaseModule.new(Constante.BaseHealth[PlayersPreference.Difficulty]),
             NewWaveStarted = signal.new(); -- Signal
             WaveEnded = signal.new();
             SequenceEnded = signal.new();
@@ -39,6 +51,7 @@ function SequenceController.new(WavesNumber: number, Entities: {string})
         }
     )
 
+   
 
     if CurrentSequence == nil then
         CurrentSequence = self
@@ -55,6 +68,7 @@ function SequenceController.Start(self: SequenceController)
     local EntitesNumber = #self.Entities
     local Previous = {}
 
+
     Start(World, SystemsFolder)
 
     task.defer(function()
@@ -69,12 +83,12 @@ function SequenceController.Start(self: SequenceController)
 
 
             for _, PreviousEntity in Previous do
-                WaveController(PreviousEntity, math.round(wave * self.SpawnRate + self.StartAmount))
+                WaveController(PreviousEntity, math.round(wave * self.SpawnRate + self.StartAmount), wave)
             end
 
             if Previous[EntityChosen] == nil then
                 table.insert(Previous, self.Entities[EntityChosen])
-                WaveController(self.Entities[EntityChosen], self.StartAmount)
+                WaveController(self.Entities[EntityChosen], self.StartAmount, wave)
             end
             
             repeat
@@ -82,6 +96,7 @@ function SequenceController.Start(self: SequenceController)
             until #LoadedMap.Entities:GetChildren() == 0 or self.skipBoolean
 
             self.skipBoolean = false
+            self:GiveWaveAmountCoins(Players:GetPlayers(), wave)
             self.WaveEnded:Fire(wave)
         end
         self.SequenceEnded:Fire()
@@ -93,10 +108,11 @@ end
 function SequenceController.Finish(self: SequenceController)
     self.Finished = true
     
-    local thread = task.defer(function()
+    task.defer(function()
         for _, entity in CollectionService:GetTagged("Entities") do
             entity:RemoveTag("Entities")
             entity:Destroy()
+            task.wait()
         end
     end)
 end
@@ -105,7 +121,12 @@ function SequenceController.skip(self: SequenceController)
     self.skipBoolean = true
 end
 
-
+function SequenceController.GiveWaveAmountCoins(self: SequenceController, Players: {Player}, currentWave)
+    for _, Player: Player in Players do
+        local IPlayer = PlayerInterface.GetIPlayerFromPlayerInstance(Player)
+        IPlayer.SessionData:Update("Coins", BASE_COINS + (currentWave - 1) * INCREMENT)
+    end
+end
 
 --Get the current Sequence
 function SequenceController.GetSequence()

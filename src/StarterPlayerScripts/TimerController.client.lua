@@ -6,17 +6,21 @@ local Red = require(ReplicatedStorage.Libraries.red)
 local TimerNetwork = Red.Client("Timer")
 local PlayerGui = Players.LocalPlayer.PlayerGui
 local TimerScreen: ScreenGui = PlayerGui:WaitForChild("Timer")
-local TimerLabel: TextLabel = TimerScreen.Canva.Seconds
+local TimerLabel: TextLabel = TimerScreen.Seconds
 
 
 
 TimerNetwork:On("OnTimerStarted", function(delay)
-    TimerLabel.Text = `{delay} seconds left`
+    TimerLabel.Text = `{delay}s`
     TimerScreen.Enabled = true
 end)
 
 TimerNetwork:On("OnTimerUpdate", function(sec)
-    TimerLabel.Text = `{sec} seconds left`
+    TimerLabel.Text = `{sec}s`
+    
+    if not TimerScreen.Enabled then
+        TimerScreen.Enabled = true
+    end
 end)
 
 

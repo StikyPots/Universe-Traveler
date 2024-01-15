@@ -7,7 +7,6 @@ local components = require(replicatedStorage.Shared.Components)
 local SummonEntitySystem = components("SummonEntitySystem")
 local SpawnEntityController = require(serverStorage.Services.SpawnEntity)
 local Base = require(serverStorage.Services.BaseController).GetCurrentBase()
-local AnimationNetwork = red.Server("AnimationNetwork")
 
 return function(world: matter.World)
     for id, entity in world:query(SummonEntitySystem) do
@@ -38,7 +37,7 @@ return function(world: matter.World)
             for i=1, #Waypoints do
                 Humanoid:MoveTo(Waypoints[i].Position)
                 Humanoid.MoveToFinished:Wait()
-                AnimationNetwork:FireAll("OnSummon", Model.Name, Humanoid)
+                Model:SetAttribute("OnSummon", i)
                 SpawnEntityController("Zombie", i, world)
             end
             Base:TakeDamage(Humanoid.Health)

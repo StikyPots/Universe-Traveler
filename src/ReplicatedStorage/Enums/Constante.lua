@@ -1,10 +1,10 @@
 return {
-    PreloadTime = 2,
+    PreloadTime = 5,
     StartTime = 5,
 
     BaseHealth = {
         Easy = 500,
-        Normal = 200,
+        Normal = 250,
         Hard = 100,
     }
 }

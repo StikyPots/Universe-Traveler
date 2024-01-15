@@ -2,6 +2,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local red = require(ReplicatedStorage.Libraries.red)
 local signal = require(ReplicatedStorage.Libraries.signal)
+local safePlayerAdded = require(ReplicatedStorage.Shared.SafePlayerAdded)
 local TimerNetwork = red.Server("Timer")
 
 
@@ -9,12 +10,12 @@ local Timer = {}
 
 export type Timer = typeof(new())
 
-function new(DELAY: number, AmountPlayerToStart: number?)
+function new(DELAY: number)
     local self = setmetatable(
         {
             Delay = DELAY,
             Ended = signal.new() :: signal.Signal,
-            AmountPlayerToStart = AmountPlayerToStart,
+            AmountPlayerToStart = #Players.PlayerAdded:Wait():GetJoinData().Members or 1,
             Tick = signal.new() :: signal.Signal,
             Skipped = false,
             BooleanPause = false,
@@ -26,42 +27,48 @@ function new(DELAY: number, AmountPlayerToStart: number?)
         }
     )
 
+    print(#Players.PlayerAdded:Wait():GetJoinData().Members)
+
     return self
 end
 
 
-local function update(self: Timer)
-    return function(Player)
-        local playerList = Players:GetPlayers()
-        local PlayersNumber = #playerList
+-- local function update(self: Timer)
+--     return function(Player)
+--         local playerList = Players:GetPlayers()
+--         local PlayersNumber = #playerList
 
-        if PlayersNumber >= self.AmountPlayerToStart then
+--         if PlayersNumber >= self.AmountPlayerToStart then
 
-            TimerNetwork:FireAll("OnTimerStarted")
+--             TimerNetwork:FireAll("OnTimerStarted")
 
-           task.defer(function()
-                for sec = self.Delay, 0, -1 do
-                print(`start in {sec} seconds`)
-                    self.Tick:Fire(sec)
-                    task.wait(1)
-                end
-                self.Ended:Fire(true)
-           end)
+--             for sec = self.Delay, 0, -1 do
+--                 print(`start in {sec} seconds`)
+--                 self.Tick:Fire(sec)
+--                 task.wait(1)
+--             end
+--             self.Ended:Fire(true)
 
-            for _, Connection: RBXScriptConnection in self.Connections do
-                Connection:Disconnect()
-            end
-            self.Connections = {}
-        else
-            warn(`{self.AmountPlayerToStart - PlayersNumber} players missing`)
-        end
+--             for _, Connection: RBXScriptConnection in self.Connections do
+--                 Connection:Disconnect()
+--             end
+--             self.Connections = {}
+--         else
+--             warn(`{self.AmountPlayerToStart - PlayersNumber} players missing`)
+--         end
+--     end
+-- end
+
+
+function Timer.WaitForPlayersToStartTimer(self: Timer)
+  while true do
+    if #Players:GetPlayers() == self.AmountPlayerToStart then
+        Players:GetPlayers()[#Players:GetPlayers()].CharacterAppearanceLoaded:Wait()
+        self:Start()
+        break
     end
-end
-
-
-function Timer.startOnPlayerAdded(self: Timer)
-    self.Connections.OnPlayerAdded = Players.PlayerAdded:Connect(update(self))
-    self.Connections.OnPlayerRemoving = Players.PlayerRemoving:Connect(update(self))
+    task.wait(1)
+  end
 end
 
 function Timer.Start(self: Timer)
@@ -71,12 +78,13 @@ function Timer.Start(self: Timer)
     end
 
     self.Thread = coroutine.create(function()
+        task.wait()
         TimerNetwork:FireAll("OnTimerStarted", self.Delay)
 
         for sec = self.Delay, 0, -1 do
             TimerNetwork:FireAll("OnTimerUpdate", sec)
+            print(`start in {sec} seconds`)
             self.Tick:Fire(sec)
-
             if self.Skipped then
                 break
             end

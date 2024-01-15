@@ -23,7 +23,6 @@ function new(MaxHealth: number)
     )
     CurrentBase = self
     BaseNetwork:FireAll("OnUpdateHealth", self.MaxHealth, self.MaxHealth)
-
     return self
 end
 
