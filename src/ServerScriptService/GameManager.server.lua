@@ -7,10 +7,9 @@ local mapLoader = require(ServerStorage.MapLoader)
 local TimerModule = require(ServerStorage.Services.Timer)
 local SequenceController = require(ServerStorage.Services.WavesController.SequenceController)
 local Constante = require(ReplicatedStorage.Enums.Constante)
+local ServerManager = require(ServerStorage.Services.ServerManager)
 
 
 
---// waiting players
 
-
-local PreloadTimer = TimerModule.new(5)
+local Server = ServerManager:StartServerOnOnePlayerJoining()

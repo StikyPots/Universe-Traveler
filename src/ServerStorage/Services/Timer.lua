@@ -15,7 +15,7 @@ function new(DELAY: number)
         {
             Delay = DELAY,
             Ended = signal.new() :: signal.Signal,
-            AmountPlayerToStart = #Players.PlayerAdded:Wait():GetJoinData().Members or 1,
+            AmountPlayerToStart = 2,
             Tick = signal.new() :: signal.Signal,
             Skipped = false,
             BooleanPause = false,
@@ -26,8 +26,6 @@ function new(DELAY: number)
             __index = Timer
         }
     )
-
-    print(#Players.PlayerAdded:Wait():GetJoinData().Members)
 
     return self
 end

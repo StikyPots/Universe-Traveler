@@ -31,15 +31,14 @@ local SequenceController = {}
 
 export type SequenceController = typeof(SequenceController.new())
 
-function SequenceController.new(WavesNumber: number, Entities: {string}, PlayersPreference: {Map: string, Difficulty: string})
+function SequenceController.new(WavesNumber: number, Entities: {string}, Difficulty: string)
     local self = setmetatable(
         {
             Entities = Entities;
             WavesNumber = WavesNumber;
             SpawnRate = WavesSettings.spawnRate,
             StartAmount = WavesSettings.StartAmount;
-            PlayersPreference = PlayersPreference,
-            Base = BaseModule.new(Constante.BaseHealth[PlayersPreference.Difficulty]),
+            Base = BaseModule.new(Constante.BaseHealth[Difficulty]),
             NewWaveStarted = signal.new(); -- Signal
             WaveEnded = signal.new();
             SequenceEnded = signal.new();
