@@ -6,5 +6,11 @@ return {
         Easy = 500,
         Normal = 250,
         Hard = 100,
+    },
+
+    DefaultTeleportData = {
+        Map = "Zombieland",
+        Difficulty = "Normal",
+        PlayerNumbers = 1,
     }
 }
