@@ -10,6 +10,7 @@ return {
 
     DefaultTeleportData = {
         Map = "Zombieland",
-        Difficulty = "Normal"
+        Difficulty = "Normal",
+        PlayerNumbers = 1,
     }
 }

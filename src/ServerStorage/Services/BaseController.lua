@@ -22,8 +22,11 @@ function new(MaxHealth: number)
         }
     )
     CurrentBase = self
-    BaseNetwork:FireAll("OnUpdateHealth", self.MaxHealth, self.MaxHealth)
     return self
+end
+
+function BaseController.Initialize(self: BaseController)
+    BaseNetwork:FireAll("OnUpdateHealth", self.MaxHealth, self.MaxHealth)
 end
 
 function BaseController.TakeDamage(self: BaseController, Damage: number)

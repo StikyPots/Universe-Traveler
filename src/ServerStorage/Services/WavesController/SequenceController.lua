@@ -67,6 +67,7 @@ function SequenceController.Start(self: SequenceController)
     local EntitesNumber = #self.Entities
     local Previous = {}
 
+    self.Base:Initialize()
 
     Start(World, SystemsFolder)
 

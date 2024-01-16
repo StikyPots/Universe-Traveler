@@ -10,12 +10,12 @@ local Timer = {}
 
 export type Timer = typeof(new())
 
-function new(DELAY: number)
+function new(DELAY: number, AmountPlayerToStart: number?)
     local self = setmetatable(
         {
             Delay = DELAY,
             Ended = signal.new() :: signal.Signal,
-            AmountPlayerToStart = 2,
+            AmountPlayerToStart = AmountPlayerToStart,
             Tick = signal.new() :: signal.Signal,
             Skipped = false,
             BooleanPause = false,
@@ -61,7 +61,7 @@ end
 function Timer.WaitForPlayersToStartTimer(self: Timer)
   while true do
     if #Players:GetPlayers() == self.AmountPlayerToStart then
-        Players:GetPlayers()[#Players:GetPlayers()].CharacterAppearanceLoaded:Wait()
+        task.wait()
         self:Start()
         break
     end
@@ -76,7 +76,6 @@ function Timer.Start(self: Timer)
     end
 
     self.Thread = coroutine.create(function()
-        task.wait()
         TimerNetwork:FireAll("OnTimerStarted", self.Delay)
 
         for sec = self.Delay, 0, -1 do

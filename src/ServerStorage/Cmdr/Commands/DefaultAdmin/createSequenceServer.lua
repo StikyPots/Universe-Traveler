@@ -6,7 +6,7 @@ local MapLoader = require(ServerStorage.MapLoader)
 return function(context)
 
 
-    local succes, result = pcall(SequenceController.new, MapLoader.GetCurrentMap().Settings.Waves, MapLoader.GetCurrentMap().Settings.Entities)
+    local succes, result = pcall(SequenceController.new, MapLoader.GetCurrentMap().Settings.Waves, MapLoader.GetCurrentMap().Settings.Entities, "Normal")
     
     if not succes then
         return result

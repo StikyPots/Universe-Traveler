@@ -3,13 +3,54 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
 local red = require(ReplicatedStorage.Libraries.red)
-local mapLoader = require(ServerStorage.MapLoader)
 local TimerModule = require(ServerStorage.Services.Timer)
-local SequenceController = require(ServerStorage.Services.WavesController.SequenceController)
 local Constante = require(ReplicatedStorage.Enums.Constante)
-local ServerManager = require(ServerStorage.Services.ServerManager)
+local GameManagerModule = require(ServerStorage.Services.GameManager)
 
 
 
 
-local Server = ServerManager:StartServerOnOnePlayerJoining()
+
+local GameManager = GameManagerModule.new()
+local Sequence: GameManagerModule.Sequence, Map: GameManagerModule.Map = GameManager:CreateSequenceAndMap()
+
+
+local PreloadTimer = TimerModule.new(Constante.PreloadTime, GameManager.ServerData.PlayerNumbers)
+local StartTimer = TimerModule.new(Constante.StartTime)
+
+local EndGameNetwork = red.Server("EndGameNetwork")
+local GameStatsNetwork = red.Server("GameStatsNetwork")
+
+--wait the current thread to wait players
+PreloadTimer:WaitForPlayersToStartTimer()
+
+
+
+PreloadTimer.Ended:Connect(function()
+    Map:load()
+    Map:TeleportPlayers(Players:GetPlayers())
+    StartTimer:Start()
+end)
+
+
+StartTimer.Ended:Connect(function()
+    Sequence:Start()
+end)
+
+
+Sequence.NewWaveStarted:Connect(function(w)
+    GameStatsNetwork:FireAll("WaveStarted", w)
+end)
+
+
+
+Sequence.Base.OnDestroyed:Connect(function()
+    Sequence:Finish()
+    for _, p in Players:GetPlayers() do
+        p:Kick("lose")
+    end
+end)
+
+Sequence.Base.OnDamaged:Connect(function(CurrentHealth: number)
+    print(CurrentHealth)
+end)

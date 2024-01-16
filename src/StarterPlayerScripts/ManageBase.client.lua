@@ -15,7 +15,7 @@ BaseNetwork:On("OnUpdateHealth", function(MaxHealth, currentHealth)
 
     FrameHealthBar.Size = UDim2.fromScale(health, 1)
 
-    FrameHealthBar.Parent.PerHealth.Text = health * 100 .."%"
+    FrameHealthBar.Parent.PerHealth.Text = math.round(health * 100) .."%"
 
     if health == 0 then
         FrameHealthBar.Visible = false
