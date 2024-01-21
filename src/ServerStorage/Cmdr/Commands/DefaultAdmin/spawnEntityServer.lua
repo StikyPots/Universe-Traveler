@@ -17,12 +17,12 @@ local SystemPrefix = "%sSystem"
 return function(context, Entity: string, amount: number)
     local EntityInfo  = GetEntity(Entity)
     local EntityToSpawn = components(string.format(SystemPrefix, EntityInfo.System))
-    local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
+    local Map: MapLoader.MapInstance = workspace.Map
 
     print(string.format(SystemPrefix, EntityInfo.System))
 
-    local StartPos = LoadedMap.StartPos
-    local Waypoints = LoadedMap.waypoints:GetChildren()
+    local StartPos = Map.StartPos
+    local Waypoints = Map.waypoints:GetChildren()
     local Model = Assets.Entities:FindFirstChild(Entity)
 
     if not Model then

@@ -1,5 +1,5 @@
 return function(Model: Model, Radius: number)
-    local EntitiesFolder = workspace.LoadedMap.Entities
+    local EntitiesFolder = workspace.Map.Entities
     local Target = {}
 
     for _, Entity in EntitiesFolder:GetChildren() do

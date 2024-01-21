@@ -41,7 +41,7 @@
         "$className": "Folder"
       },
 
-      "LoadedMap":{
+      "Map":{
         "$className": "Folder",
 
         "Entities":{

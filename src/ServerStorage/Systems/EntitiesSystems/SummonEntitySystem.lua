@@ -2,10 +2,10 @@ local replicatedStorage = game:GetService("ReplicatedStorage")
 local serverStorage = game:GetService("ServerStorage")
 
 local matter = require(replicatedStorage.Libraries.matter)
-local red = require(replicatedStorage.Libraries.red)
 local components = require(replicatedStorage.Shared.Components)
 local SummonEntitySystem = components("SummonEntitySystem")
 local SpawnEntityController = require(serverStorage.Services.SpawnEntity)
+local Constantes = require(replicatedStorage.Enums.Constante)
 local Base = require(serverStorage.Services.BaseController).GetCurrentBase()
 
 return function(world: matter.World)
@@ -25,10 +25,10 @@ return function(world: matter.World)
         Humanoid.WalkSpeed = Speed
         Humanoid.MaxHealth = health
         Humanoid.Health = health
-        Model.Parent = workspace.LoadedMap.Entities
+        Model.Parent = workspace.Map.Entities
         Model:PivotTo(StartPos:GetPivot())
         Model.HumanoidRootPart:SetNetworkOwner(nil)
-        Model:AddTag("Entities")
+        Model:AddTag(Constantes.EntityTag)
         world:despawn(id)
 
         --// Moving Entity

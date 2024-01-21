@@ -6,7 +6,7 @@ local red = require(ReplicatedStorage.Libraries.red)
 local BaseNetwork = red.Client("BaseNetwork")
 
 local local_player = Players.LocalPlayer
-local HealthBarScreen = local_player.PlayerGui:WaitForChild("HealthBar")
+local HealthBarScreen = local_player.PlayerGui:WaitForChild("Topbar")
 
 BaseNetwork:On("OnUpdateHealth", function(MaxHealth, currentHealth)
     local FrameHealthBar: Frame = HealthBarScreen.HealthBar.MovingHealthBar

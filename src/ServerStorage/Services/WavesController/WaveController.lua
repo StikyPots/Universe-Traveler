@@ -1,12 +1,15 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
-local Workspace = game:GetService("Workspace")
+
+
+
 local Shared = ReplicatedStorage.Shared
 
 local components = require(Shared.Components)
 local Start = require(Shared.Start)
 local matter = require(ReplicatedStorage.Libraries.matter)
 local GetEntity = require(Shared.GetElement).GetEntity
+local Constantes = require(ReplicatedStorage.Enums.Constante)
 local MapLoader = require(ServerStorage.MapLoader)
 
 local Assets: Folder = ReplicatedStorage.Assets
@@ -19,12 +22,12 @@ local SystemPrefix = "%sSystem"
 return function(name: string, amount: number, currentWave: number)
     local EntityInfo  = GetEntity(name)
     local EntityToSpawn = components(string.format(SystemPrefix, EntityInfo.System))
-    local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
+    local Map: MapLoader.MapInstance = workspace.Map
 
     -- print(string.format(SystemPrefix, EntityInfo.System))
 
-    local StartPos = LoadedMap.StartPos
-    local Waypoints = LoadedMap.waypoints:GetChildren()
+    local StartPos = Map.StartPos
+    local Waypoints = Map.waypoints:GetChildren()
     local Model = Assets.Entities:FindFirstChild(name)
 
     if not Model then
@@ -44,6 +47,7 @@ return function(name: string, amount: number, currentWave: number)
             Model = Model:Clone();
             StartPos = StartPos;
             Waypoints = Waypoints;
+            Tag = Constantes.EntityTag,
         }))
     end
 end

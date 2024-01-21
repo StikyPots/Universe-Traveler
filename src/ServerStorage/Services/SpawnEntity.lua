@@ -19,12 +19,12 @@ return function(name: string, Pos, World)
 
     local EntityInfo  = GetEntity(name)
     local EntityToSpawn = components("WalkingEntitySystem")
-    local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
+    local Map: MapLoader.MapInstance = workspace.Map
 
     print(string.format(SystemPrefix, EntityInfo.System))
 
-    local Waypoints = LoadedMap.waypoints:GetChildren()
-    local StartPos = LoadedMap.waypoints[Pos]
+    local Waypoints = Map.waypoints:GetChildren()
+    local StartPos = Map.waypoints[Pos]
     local Model = Assets.Entities:FindFirstChild(name)
 
 

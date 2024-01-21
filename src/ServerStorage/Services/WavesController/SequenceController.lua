@@ -5,7 +5,6 @@ local ServerStorage = game:GetService("ServerStorage")
 
 local signal = require(ReplicatedStorage.Libraries.signal)
 local red = require(ReplicatedStorage.Libraries.red)
-local WavesSettings = require(script.Parent.Settings)
 local matter = require(ReplicatedStorage.Libraries.matter)
 local MapLoader = require(ServerStorage.MapLoader)
 local WaveController = require(script.Parent.WaveController)
@@ -31,14 +30,14 @@ local SequenceController = {}
 
 export type SequenceController = typeof(SequenceController.new())
 
-function SequenceController.new(WavesNumber: number, Entities: {string}, Difficulty: string)
+function SequenceController.new(WavesNumber: number, Entities: {string})
     local self = setmetatable(
         {
             Entities = Entities;
             WavesNumber = WavesNumber;
-            SpawnRate = WavesSettings.spawnRate,
-            StartAmount = WavesSettings.StartAmount;
-            Base = BaseModule.new(Constante.BaseHealth[Difficulty]),
+            SpawnRate = Constante.GlobalWaveSettings.spawnRatePerDifficulty[workspace.Map:GetAttribute("Difficulty")],
+            StartAmount = Constante.GlobalWaveSettings.StartAmountPerDifficulty[workspace.Map:GetAttribute("Difficulty")];
+            Base = BaseModule.new(Constante.BaseHealth[workspace.Map:GetAttribute("Difficulty")]),
             NewWaveStarted = signal.new(); -- Signal
             WaveEnded = signal.new();
             SequenceEnded = signal.new();
@@ -63,7 +62,7 @@ end
 
 function SequenceController.Start(self: SequenceController)
 
-    local LoadedMap: MapLoader.MapInstance = workspace.LoadedMap
+    local Map: MapLoader.MapInstance = workspace.Map
     local EntitesNumber = #self.Entities
     local Previous = {}
 
@@ -82,8 +81,8 @@ function SequenceController.Start(self: SequenceController)
             local EntityChosen = math.ceil(wave * EntitesNumber / self.WavesNumber)
 
 
-            for _, PreviousEntity in Previous do
-                WaveController(PreviousEntity, math.round(wave * self.SpawnRate + self.StartAmount), wave)
+            for pos, PreviousEntity in Previous do
+                WaveController(PreviousEntity, math.round((wave * self.SpawnRate + self.StartAmount) / pos), wave)
             end
 
             if Previous[EntityChosen] == nil then
@@ -93,7 +92,7 @@ function SequenceController.Start(self: SequenceController)
             
             repeat
             task.wait()
-            until #LoadedMap.Entities:GetChildren() == 0 or self.skipBoolean
+            until #Map.Entities:GetChildren() == 0 or self.skipBoolean
 
             self.skipBoolean = false
             self:GiveWaveAmountCoins(Players:GetPlayers(), wave)

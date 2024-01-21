@@ -3,6 +3,7 @@ local ServerStorage = game:GetService("ServerStorage")
 
 local matter = require(replicatedStorage.Libraries.matter)
 local components = require(replicatedStorage.Shared.Components)
+local Constantes = require(replicatedStorage.Enums.Constante)
 local Base = require(ServerStorage.Services.BaseController).GetCurrentBase()
 
 local WalkingEntitySystem = components("WalkingEntitySystem")
@@ -24,10 +25,10 @@ return function(world: matter.World)
         Humanoid.WalkSpeed = Speed
         Humanoid.MaxHealth = health
         Humanoid.Health = health
-        Model.Parent = workspace.LoadedMap.Entities
+        Model.Parent = workspace.Map.Entities
         Model:PivotTo(StartPos:GetPivot())
         Model.HumanoidRootPart:SetNetworkOwner(nil)
-        Model:AddTag("Entities")
+        Model:AddTag(Constantes.EntityTag)
         world:despawn(id)
 
         --// Moving Entity
@@ -40,7 +41,7 @@ return function(world: matter.World)
             Base:TakeDamage(Humanoid.Health)
             Model:Destroy()
             Model:RemoveTag("Entities")
-        end)  
+        end) 
     end
 end
 

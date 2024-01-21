@@ -49,7 +49,7 @@ end
 
 function super.load(self:mapLoader)
 
-    local LoadedMap: MapInstance = workspace.LoadedMap
+    local Map: MapInstance = workspace.Map
     local MapToLoad: Folder = MapModels:FindFirstChild(self.name)
 
     if not MapToLoad then
@@ -60,16 +60,16 @@ function super.load(self:mapLoader)
     for _, element: Folder in MapToLoad:GetChildren() do
         task.wait(0.05)
         element:Clone()
-        element.Parent = LoadedMap
+        element.Parent = Map
     end
 end
 
 
 function super.TeleportPlayers(self: mapLoader, Players: {Player})
-    local LoadedMap: MapInstance = workspace.LoadedMap
+    local Map: MapInstance = workspace.Map
 
     for _, Player: Player in Players do
-        Player.Character:PivotTo(LoadedMap.TeleportPos:GetPivot())
+        Player.Character:PivotTo(Map.TeleportPos:GetPivot())
     end
 
     print("all players have been teleported")

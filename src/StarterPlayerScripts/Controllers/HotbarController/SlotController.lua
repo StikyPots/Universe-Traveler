@@ -36,7 +36,7 @@ function super._addToList(self: SlotController)
     local ViewPort: ViewportFrame = slot.ViewportFrame
     local SlotNumber: TextLabel = slot.SlotNumber
     local Camera = Instance.new("Camera", ViewPort)
-    local UIGradient: UIGradient = slot.RarityColor.UIGradient
+    local UIGradient: UIGradient = slot.UIStroke.UIGradient
 
     local ModelToClone: Model = ReplicatedStorage.Assets.Towers:FindFirstChild(self.Name)
 
@@ -56,7 +56,7 @@ function super._addToList(self: SlotController)
     UIGradient.Color = ColorSequence.new(RarityColors[self.TowerRarity])
 
     if self.TowerRarity == "Ultimate" then
-        local TweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1)
+        local TweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
         TweenService:Create(UIGradient, TweenInfo, {Rotation = 180}):Play()
     end
 
