@@ -163,11 +163,11 @@ function super.ClearTower(self: IPlayer)
     self.EquipTowers.Value = {}
 end
 
-function GetIPlayerFromPlayerInstance(player: Player): IPlayer
+local function GetIPlayerFromPlayerInstance(player: Player): IPlayer
     return _Players[player.UserId]
 end
 
-function RemovePlayer(player: Player)
+local function RemovePlayer(player: Player)
     local IPlayer = _Players[player.UserId]
     _Players[player.UserId] = nil
 

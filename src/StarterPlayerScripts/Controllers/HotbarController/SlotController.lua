@@ -37,6 +37,7 @@ function super._addToList(self: SlotController)
     local SlotNumber: TextLabel = slot.SlotNumber
     local Camera = Instance.new("Camera", ViewPort)
     local UIGradient: UIGradient = slot.UIStroke.UIGradient
+    local UIGradient1: UIGradient = slot.Price.UIStroke.UIGradient
 
     local ModelToClone: Model = ReplicatedStorage.Assets.Towers:FindFirstChild(self.Name)
 
@@ -47,16 +48,16 @@ function super._addToList(self: SlotController)
 
    local RarityColors = GetEnums("Colors", "Rarity")
 
-
-   print(RarityColors)
-
     local ClonedModel = ModelToClone:Clone()
     local HumanoidRootPart = ClonedModel:FindFirstChild("HumanoidRootPart")
 
     UIGradient.Color = ColorSequence.new(RarityColors[self.TowerRarity])
+    UIGradient1.Color = ColorSequence.new(RarityColors[self.TowerRarity])
+
 
     if self.TowerRarity == "Ultimate" then
         local TweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+        TweenService:Create(UIGradient1, TweenInfo, {Rotation = 180}):Play()
         TweenService:Create(UIGradient, TweenInfo, {Rotation = 180}):Play()
     end
 
@@ -65,6 +66,7 @@ function super._addToList(self: SlotController)
     Camera.CameraSubject = ClonedModel
     ClonedModel.Parent = ViewPort
     SlotNumber.Text = self.Index
+    slot.Price.Text = "$".. GetTowers(self.Name).price
 
     Camera.CFrame = CFrame.new(
         HumanoidRootPart.Position + (HumanoidRootPart.CFrame.LookVector * offset),

@@ -74,6 +74,23 @@ function new(Player: Player, Name: string, CFrame: CFrame)
 end
 
 
+function super._UpdateAttributes(self: ITower)
+    local toMakeAsAnAttribute = {"Radius", "Level", "Damage", "Delay"}
+
+    for key, value in self do
+        if not table.find(toMakeAsAnAttribute, key) then continue end
+            
+        if type(value) == "table" then
+            self.Model:SetAttribute(key, value[self.Updated])
+        else
+            self.Model:SetAttribute(key, value)
+        end
+    end
+
+    self.Model:SetAttribute("Id", self.Id)
+    self.Model:SetAttribute("Owner", self.Owner.Name)
+end
+
 function super.Spawn(self: ITower)
     
     local ModelToClone: Model = Assets.Towers:FindFirstChild(self.Name)
@@ -88,9 +105,9 @@ function super.Spawn(self: ITower)
     self.Model.Parent = workspace.Map.Towers
 
     self.Model:AddTag(Constantes.TowerTag)
-    self.Model:SetAttribute("Id", self.Id)
-    self.IPlayer:IncreaseAPacedTower(self.Name)
+    self:_UpdateAttributes()
 
+    self.IPlayer:IncreaseAPacedTower(self.Name)
     World:spawnAt(self.Id, self._Component({
 
         Owner = self.Owner;
@@ -114,6 +131,8 @@ function super.Update(self: ITower)
 
     self._DAMAGECALCULATION = self.Damage[self.Updated] + (self.Level - 1) * BASE_LEVELDAMAGE
 
+    self:_UpdateAttributes()
+
     World:replace(self.Id, self._Component({
         Owner = self.Owner;
         Model = self.Model;
@@ -131,18 +150,6 @@ function super.Delete(self: ITower)
     print(_Towers)
     self.IPlayer.SessionData:Update("Coins", math.round(self.Price * self.Updated / 2))
 end
-
-
-function super.Get(self: ITower, Instance: string, updated: number): number -- return only Radius, Damage, Delay
-    local accept = {"Radius", "Damage", "Delay"}
-
-    assert(table.find(accept, Instance), "Not instance found")
-    assert(updated >= 1 and updated <= 3, "uptaded must be between 1 and 3")
-
- 
-    return self[Instance][updated]
-end
-
 
 function GetTowerFromId(Id: number): ITower
     return _Towers[tostring(Id)]
