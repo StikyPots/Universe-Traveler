@@ -31,31 +31,6 @@ function new(DELAY: number, AmountPlayerToStart: number?)
 end
 
 
--- local function update(self: Timer)
---     return function(Player)
---         local playerList = Players:GetPlayers()
---         local PlayersNumber = #playerList
-
---         if PlayersNumber >= self.AmountPlayerToStart then
-
---             TimerNetwork:FireAll("OnTimerStarted")
-
---             for sec = self.Delay, 0, -1 do
---                 print(`start in {sec} seconds`)
---                 self.Tick:Fire(sec)
---                 task.wait(1)
---             end
---             self.Ended:Fire(true)
-
---             for _, Connection: RBXScriptConnection in self.Connections do
---                 Connection:Disconnect()
---             end
---             self.Connections = {}
---         else
---             warn(`{self.AmountPlayerToStart - PlayersNumber} players missing`)
---         end
---     end
--- end
 
 
 function Timer.WaitForPlayersToStartTimer(self: Timer)

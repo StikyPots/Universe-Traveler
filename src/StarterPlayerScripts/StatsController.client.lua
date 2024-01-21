@@ -6,10 +6,10 @@ local local_player = Players.LocalPlayer
 local GameStatsNetwork = red.Client("GameStatsNetwork")
 
 
-local StatsScreen = local_player.PlayerGui:WaitForChild("Stats")
+local Topbar = local_player.PlayerGui:WaitForChild("Topbar")
 
-local WaveTextLabel = StatsScreen.Wave
+local WaveTextLabel = Topbar.Wave
 
 GameStatsNetwork:On("WaveStarted", function(w: number)
     WaveTextLabel.Text = string.upper("wave "..w)
-end) 
+end)

@@ -1,14 +1,13 @@
 local CollectionService = game:GetService("CollectionService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
+local Constantes = require(ReplicatedStorage.Enums.Constante)
 
-
-local TowerUpdateRotation = "TowerUpdateRotation"
 
 local Connections = {} 
-local IncrementId = 0
 local duration = 0.5
 
-CollectionService:GetInstanceAddedSignal(TowerUpdateRotation):Connect(function(Model: Model)
+CollectionService:GetInstanceAddedSignal(Constantes.TowerTag):Connect(function(Model: Model)
 
 
 	local id = Model:GetAttribute("Id")
@@ -24,7 +23,6 @@ CollectionService:GetInstanceAddedSignal(TowerUpdateRotation):Connect(function(M
             Vector3.new(TargetVector3.X, ModelVector3.Y, TargetVector3.Z)
         )
 
-        -- Model.PrimaryPart.CFrame = Model.PrimaryPart.CFrame:Lerp(Goal, alpha)
         TweenService:Create(Model.PrimaryPart, TweenInfo.new(duration), {CFrame = Goal}):Play()
     end)
 end)

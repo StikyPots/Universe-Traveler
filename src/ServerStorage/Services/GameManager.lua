@@ -13,8 +13,6 @@ local mapLoader = require(ServerStorage.MapLoader)
 local Constante = require(ReplicatedStorage.Enums.Constante)
 
 
-PartySortedMap:SetAsync(game.PlaceId, Constante.DefaultTeleportData, 60, game.PlaceId)
-
 local GameManager = {}
 local _gameManager = nil
 
@@ -34,14 +32,17 @@ function GameManager.new()
 
     self.ServerData = {} :: PartyData
     self.Key = if not RunService:IsStudio() then game.PrivateServerId else game.PlaceId
-    self:GetDataFromMemoryStore()
+
+    self:GetDatFaromMemoryStore()
+    self:SetupAttributes()
+    _gameManager = self
 
     return self
 end
 
 
 
-function GameManager.GetDataFromMemoryStore(self: GameManager)
+function GameManager.GetDatFaromMemoryStore(self: GameManager)
 
     print(self.Key)
 
@@ -56,6 +57,12 @@ function GameManager.GetDataFromMemoryStore(self: GameManager)
     end
 end
 
+function GameManager.SetupAttributes(self: GameManager)
+    for key, data in self.ServerData do
+        workspace.Map:SetAttribute(key, data)
+    end
+end
+
 --// return Sequence and Map instances
 function GameManager.CreateSequenceAndMap(self: GameManager)
 
@@ -66,11 +73,9 @@ function GameManager.CreateSequenceAndMap(self: GameManager)
 end
 
 
-
-function GameManager.GetGameManager(): GameManager
+function GameManager.GetCurrentGameManager()
     return _gameManager
 end
-
 
 
 

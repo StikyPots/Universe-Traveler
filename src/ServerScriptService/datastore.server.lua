@@ -10,11 +10,15 @@ local GettingTower = Red.Server("GettingTower")
 
 Players.PlayerAdded:Connect(function(player)
     local Iplayer: PlayerInterface.IPlayer = PlayerInterface.new(player)
+    
+    GettingTower:On("GettingTower", function()
 
-    GettingTower:On("GettingTower", function(player)
-        local Iplayer = PlayerInterface.GetIPlayerFromPlayerInstance(player)
+       local StringfyTowers = {}
+       local Iplayer = PlayerInterface.GetIPlayerFromPlayerInstance(player)
 
-        local StringfyTowers = {}
+
+
+        print(Iplayer)
         
         for key, _ in Iplayer.EquipTowers.Value do
             table.insert(StringfyTowers, key)

@@ -6,6 +6,7 @@ local matter = require(ReplicatedStorage.Libraries.matter)
 local GetTower = require(ReplicatedStorage.Shared.GetElement).GetTower
 local playerInterface = require(ServerStorage.PlayerManager.PlayerInterface)
 local Start = require(ReplicatedStorage.Shared.Start)
+local Constantes = require(ReplicatedStorage.Enums.Constante)
 
 local Assets = ReplicatedStorage.Assets
 local _Towers = {}
@@ -67,7 +68,6 @@ function new(Player: Player, Name: string, CFrame: CFrame)
 
 
 
-    print(IncrementId)
     self:Spawn()
 
     return self
@@ -85,9 +85,9 @@ function super.Spawn(self: ITower)
 
     self.Model = ModelToClone:Clone()
     self.Model:PivotTo(self.CFrame)
-    self.Model.Parent = workspace.LoadedMap.Towers
+    self.Model.Parent = workspace.Map.Towers
 
-    self.Model:AddTag("TowerUpdateRotation")
+    self.Model:AddTag(Constantes.TowerTag)
     self.Model:SetAttribute("Id", self.Id)
 
 

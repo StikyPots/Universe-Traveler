@@ -16,7 +16,7 @@ local Player: Player = Players.LocalPlayer
 local Assets: Folder = ReplicatedStorage.Assets
 local TowersFolder: Folder = Assets.Towers
 local placementScreen: ScreenGui = Player.PlayerGui:WaitForChild("Placement")
-local PlacementNetwork = red.Client("PlacementNetwork")
+local TowerNetwork = red.Client("TowerNetwork")
 local hotbar: hotbarController.hotbarController = hotbarController.new()
 local offset = 50
 
@@ -37,7 +37,7 @@ local canPlace = false
 
 local function place(actionName, inputState, _inputObject)
     if inputState == Enum.UserInputState.Begin and canPlace then
-       PlacementNetwork:Fire("Placement", SelectedTowers.Name, SelectedTowers:GetPivot())
+       TowerNetwork:Fire("Placement", SelectedTowers.Name, SelectedTowers:GetPivot())
         selected = false
         SelectedTowers:Destroy()
         SelectedTowers = nil
