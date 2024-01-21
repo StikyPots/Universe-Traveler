@@ -20,20 +20,24 @@ local TowerNetwork = red.Server("TowerNetwork")
 TowerNetwork:On("Placement", function(Player: Player, Name: string, CFrameV: CFrame)
     local IPlayer = PlayerInterface.GetIPlayerFromPlayerInstance(Player)
     
-    local CurrentAmountOfTower = workspace.Map:GetAttribute("AmountPlacedTower")
-    local Difficulty = workspace.Map:GetAttribute("Difficulty")
+    local AmountPlacedTower = workspace.Map:GetAttribute("AmountPlacedTower")
+    local Difficulty = Constantes.MaxTowerOnMapPerDifficulty[workspace.Map:GetAttribute("Difficulty")]
 
 
     local PlayerCoins = IPlayer.SessionData:Get("Coins")
     local TowerPrice = GetTowers(Name).price
-    local AllowPlacement = not (PlayerCoins >= TowerPrice) and IPlayer:HasTower(Name) and not CurrentAmountOfTower > Constantes.MaxTowerOnMapPerDifficulty[Difficulty]
+
+    local AbleToPlace = (PlayerCoins >= TowerPrice) and IPlayer:HasTower(Name) and AmountPlacedTower < Difficulty
+
+	-- print(AbleToPlace, IPlayer:HasTower(Name), PlayerCoins >= TowerPrice, AmountPlacedTower < Difficulty)
 
     
-    if AllowPlacement then
+
+    if not AbleToPlace or IPlayer:HasReachMaxTowerLimit(Name) then
         return
     end
 
-    workspace.Map:SetAttribute("AmountPlacedTower", CurrentAmountOfTower + 1)
+    workspace.Map:SetAttribute("AmountPlacedTower", AmountPlacedTower + 1)
     IPlayer.SessionData:Update("Coins", - TowerPrice)
     TowerInterface.new(Player, Name, CFrameV)
 end)

@@ -1,6 +1,6 @@
 return {
-    PreloadTime = 5,
-    StartTime = 5,
+    PreloadTime = 1,
+    StartTime = 1,
 
     TowerTag = "Tower",
     EntityTag = "Entity",
@@ -23,13 +23,13 @@ return {
 
     BaseHealth = {
         Easy = 500,
-        Normal = 250,
+        Normal = 100,
         Hard = 100,
 	},
 	
 	MaxTowerOnMapPerDifficulty = {
-		Easy = 150,
-		Normal = 0,
+		Easy = 130,
+		Normal = 100,
 		Hard = 50,
 	},
 

@@ -58,6 +58,10 @@ function GameManager.GetDatFaromMemoryStore(self: GameManager)
 end
 
 function GameManager.SetupAttributes(self: GameManager)
+
+
+    workspace.Map:SetAttribute("AmountPlacedTower", 0)
+
     for key, data in self.ServerData do
         workspace.Map:SetAttribute(key, data)
     end

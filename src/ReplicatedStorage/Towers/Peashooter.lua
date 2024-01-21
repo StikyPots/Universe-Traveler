@@ -5,5 +5,6 @@ return {
     rarity = "Ultimate",
     damage = {8, 24, 72},
     delay = {2, 1.2, 1},
+    MaxTowerOnMap = 4,
     price = 250,
 }

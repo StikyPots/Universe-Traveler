@@ -31,6 +31,10 @@ local SequenceController = {}
 export type SequenceController = typeof(SequenceController.new())
 
 function SequenceController.new(WavesNumber: number, Entities: {string})
+
+
+    print(workspace.Map:GetAttribute("Difficulty"))
+
     local self = setmetatable(
         {
             Entities = Entities;

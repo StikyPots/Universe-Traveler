@@ -22,6 +22,7 @@ export type Tower = {
     damage: {number},
     delay: {number},
     price: number,
+    MaxTowerOnMap: number,
 }
 
 

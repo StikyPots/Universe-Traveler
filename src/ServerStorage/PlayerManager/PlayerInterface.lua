@@ -6,6 +6,7 @@ local Signal = require(ReplicatedStorage.Libraries.signal)
 local Red = require(ReplicatedStorage.Libraries.red)
 local DatastoreTemplates = require(script.Parent.Template)
 local SessionData = require(script.Parent.SessionData)
+local GetTower = require(ReplicatedStorage.Shared.GetElement).GetTower
 
 local MAX_TOWERS = 5
 local userdata_key = "%i_userdata"
@@ -27,6 +28,7 @@ function new(player: Player)
             Userdata = SuphisDatastore.new("Userdata",  KeyUserdata) :: SuphisDatastore.DataStore;
             EquipTowers = SuphisDatastore.new("EquipTowers", KeyEquipTowers) :: SuphisDatastore.DataStore;
             SessionData = SessionData.new(player) :: SessionData.SessionData;
+            MaxTowersOnMap = {},
 
             --// Event Interactions
 
@@ -120,6 +122,23 @@ end
 
 function super.HasTower(self: IPlayer, TowerName: string): boolean
     return self.EquipTowers.Value[TowerName] ~= nil
+end
+
+function super.HasReachMaxTowerLimit(self: IPlayer, Name: string)
+	local MaxTowerLimit = GetTower(Name).MaxTowerOnMap
+
+    if not self.MaxTowersOnMap[Name] then
+        self.MaxTowersOnMap[Name] = 0
+    end
+
+    print(self.MaxTowersOnMap[Name])
+
+    return (self.MaxTowersOnMap[Name] >= MaxTowerLimit)
+end
+
+
+function super.IncreaseAPacedTower(self: IPlayer, Name)
+    self.MaxTowersOnMap[Name] = self.MaxTowersOnMap[Name] + 1
 end
 
 function super.GetTower(self: IPlayer, Name: string): {Name: string, Experience: number, Level: number}

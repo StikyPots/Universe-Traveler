@@ -1,5 +1,5 @@
 local Session = {}
-local START_VALUE = 350;
+local START_VALUE = 1000;
 
 export type SessionData = typeof(new())
 

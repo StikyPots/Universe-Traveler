@@ -89,7 +89,7 @@ function super.Spawn(self: ITower)
 
     self.Model:AddTag(Constantes.TowerTag)
     self.Model:SetAttribute("Id", self.Id)
-
+    self.IPlayer:IncreaseAPacedTower(self.Name)
 
     World:spawnAt(self.Id, self._Component({
 
