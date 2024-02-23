@@ -135,7 +135,7 @@ hotbar.OnSelected:Connect(function(tower)
     end
 end)
 
-RunService.RenderStepped:Connect(function(deltaTime)
+conc = RunService.RenderStepped:Connect(function(deltaTime)
     local RaycastResult: RaycastResult = RaycastMouse({ Player.Character , SelectedTowers })
     local MousePos: Vector2 = UserInputService:GetMouseLocation()
 
@@ -143,6 +143,8 @@ RunService.RenderStepped:Connect(function(deltaTime)
         ContextActionService:UnbindAction(Action)
     end
 
+
+    
     placementGui(MousePos)
 
     if RaycastResult and SelectedTowers then
@@ -153,4 +155,5 @@ RunService.RenderStepped:Connect(function(deltaTime)
 
         SelectedTowers:PivotTo(CFrame.new(RaycastResult.Position) * CFrame.Angles(0, math.rad(Rotation), 0))
     end
+    
 end)

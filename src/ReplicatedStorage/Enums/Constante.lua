@@ -34,9 +34,15 @@ return {
 	},
 
     DefaultTeleportData = {
-        Map = "Zombieland",
+        Map = "Zombieland1",
         Difficulty = "Normal",
         PlayerNumbers = 1,
+    },
+
+
+    Notification = {
+        defaultDuration = 8,
+        defaultStyle = "none"
     }
 
 }

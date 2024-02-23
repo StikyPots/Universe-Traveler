@@ -4,7 +4,7 @@ return {
     Speed = 2,
     
     Animations = {
-        OnSummon = "15173846734";
-        Walking = "15174094756";
+        OnSummon = "16156639761";
+        Walking = "16156648442";
     }
 }

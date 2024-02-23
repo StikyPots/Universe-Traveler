@@ -4,6 +4,6 @@ return {
     Speed = 2,
 
     Animations = {
-        Walking = "15174094756";
+        Walking = "16156648442";
     }
 }

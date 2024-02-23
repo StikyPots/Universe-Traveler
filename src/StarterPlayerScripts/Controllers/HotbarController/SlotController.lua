@@ -25,7 +25,6 @@ function new(Name: string, Index: number, Screen: ScreenGui)
         }
     )
 
-    self.TowerRarity = GetTowers(self.Name).rarity
     self:_addToList()
     return self
 end
@@ -37,27 +36,32 @@ function super._addToList(self: SlotController)
     local SlotNumber: TextLabel = slot.SlotNumber
     local Camera = Instance.new("Camera", ViewPort)
     local UIGradient: UIGradient = slot.UIStroke.UIGradient
-    local UIGradient1: UIGradient = slot.Price.UIStroke.UIGradient
 
     local ModelToClone: Model = ReplicatedStorage.Assets.Towers:FindFirstChild(self.Name)
+
+
+    if self.Name == "none" then
+        SlotNumber.Text = self.Index
+        slot.Price.Text = " "
+        self:Disconnect()
+        slot.Parent = HotbarList
+        return
+    end
 
     if not ModelToClone then
         return
     end
 
-
-   local RarityColors = GetEnums("Colors", "Rarity")
-
+    self.TowerRarity = GetTowers(self.Name).rarity
+    local RarityColors = GetEnums("Colors", "Rarity")
     local ClonedModel = ModelToClone:Clone()
-    local HumanoidRootPart = ClonedModel:FindFirstChild("HumanoidRootPart")
 
+    local HumanoidRootPart = ClonedModel:FindFirstChild("HumanoidRootPart")
     UIGradient.Color = ColorSequence.new(RarityColors[self.TowerRarity])
-    UIGradient1.Color = ColorSequence.new(RarityColors[self.TowerRarity])
 
 
     if self.TowerRarity == "Ultimate" then
         local TweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
-        TweenService:Create(UIGradient1, TweenInfo, {Rotation = 180}):Play()
         TweenService:Create(UIGradient, TweenInfo, {Rotation = 180}):Play()
     end
 
@@ -75,6 +79,24 @@ function super._addToList(self: SlotController)
 
    
     slot.Parent = HotbarList
+end
+
+
+
+function super.Delete(self: SlotController)
+
+    self:Disconnect()
+
+    self.Connections = {}
+end
+
+function super.Disconnect(self: SlotController)
+
+    for _, Connection: RBXScriptConnection in self.Connections do
+        Connection:Disconnect()
+    end
+
+    self.Connections = {}
 end
 
 

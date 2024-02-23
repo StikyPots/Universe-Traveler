@@ -143,12 +143,13 @@ function super.Update(self: ITower)
 end
 
 function super.Delete(self: ITower)
+
     _Towers[tostring(self.Id)] = nil
     self.Model:Destroy()
     World:despawn(self.Id)
 
     print(_Towers)
-    self.IPlayer.SessionData:Update("Coins", math.round(self.Price * self.Updated / 2))
+    self.IPlayer.SessionData:Update("Coins", math.round(self.Price * (self.Updated / 2)))
 end
 
 function GetTowerFromId(Id: number): ITower

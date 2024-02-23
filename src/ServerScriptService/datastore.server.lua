@@ -16,16 +16,10 @@ Players.PlayerAdded:Connect(function(player)
        local StringfyTowers = {}
        local Iplayer = PlayerInterface.GetIPlayerFromPlayerInstance(player)
 
-
-
-        print(Iplayer)
         
         for key, _ in Iplayer.EquipTowers.Value do
             table.insert(StringfyTowers, key)
         end
-
-        print(StringfyTowers)
-
 
         return StringfyTowers
     end)
