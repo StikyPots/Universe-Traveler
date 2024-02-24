@@ -6,18 +6,18 @@ local ServerStorage = game:GetService("ServerStorage")
 local matter = require(ReplicatedStorage.Libraries.matter)
 local red = require(ReplicatedStorage.Libraries.red)
 local components = require(ReplicatedStorage.Shared.Components)
-local FindTarget = require(ServerStorage.Services.TowersController.TowerUtils.FindTarget)
-local DealDamage = require(ServerStorage.Services.TowersController.TowerUtils.DealDamage)
-local RotateTower = require(ServerStorage.Services.TowersController.TowerUtils.RotateTower)
 local Constantes = require(ReplicatedStorage.Enums.Constante)
 
 
 
+local CanSommonComponent = components("CanSommon")
 local EntityDataComponent = components("EntityData")
 local SpawningDataComponent = components("SpawningData")
-local CanWalkComponent = components("CanWalk")
-local CanFlyComponent = components("CanFly")
-local CanSommonComponent = components("CanSommon")
+
+local SpawnEntityController = require(ServerStorage.Services.SpawnEntity)
+
+
+
 
 
 
@@ -27,8 +27,7 @@ local Base = require(ServerStorage.Services.BaseController).GetCurrentBase()
 
 
 return function (World: matter.World)
-    for id, EntityDataValue, SpawningDataValue in World:query(EntityDataComponent, SpawningDataComponent, CanWalkComponent):without(CanFlyComponent, CanSommonComponent) do
-
+    for id, EntityDataValue, SpawningDataValue in World:query(EntityDataComponent, SpawningDataComponent, CanSommonComponent) do
 
         local EntityData = EntityDataValue.EntityData
         local SpawningData = SpawningDataValue.SpawningData
@@ -57,10 +56,13 @@ return function (World: matter.World)
                 local Waypoint: Part = Waypoints[i]
                 Humanoid:MoveTo(Waypoint.Position, Waypoint)
                 Humanoid.MoveToFinished:Wait()
+                Model:SetAttribute("OnSummon", i)
+                SpawnEntityController(EntityData.EntityToSpawn, i)
             end
             Base:TakeDamage(Humanoid.Health)
             Model:Destroy()
             Model:RemoveTag(Constantes.EntityTag)
         end)
+
     end
 end

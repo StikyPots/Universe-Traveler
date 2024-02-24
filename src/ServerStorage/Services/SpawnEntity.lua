@@ -11,18 +11,13 @@ local MapLoader = require(ServerStorage.MapLoader)
 local Assets: Folder = ReplicatedStorage.Assets
 local World: matter.World = require(ServerStorage.World)
 local SystemsFolder = ServerStorage.Systems.EntitiesSystems
-local SystemPrefix = "%sSystem"
+local MakeComponentList = require(ServerStorage.Utils.MakeComponentList)
 
 
 
-return function(name: string, Pos, World)
-
+return function(name: string, Pos)
     local EntityInfo  = GetEntity(name)
-    local EntityToSpawn = components("WalkingEntitySystem")
     local Map: MapLoader.MapInstance = workspace.Map
-
-    print(string.format(SystemPrefix, EntityInfo.System))
-
     local Waypoints = Map.waypoints:GetChildren()
     local StartPos = Map.waypoints[Pos]
     local Model = Assets.Entities:FindFirstChild(name)
@@ -49,12 +44,9 @@ return function(name: string, Pos, World)
         return
     end
 
-    World:spawn(EntityToSpawn({
-        Health = EntityInfo.Health;
-        Speed = EntityInfo.Speed;
-        Model = Model:Clone();
-        StartPos = StartPos;
-        Waypoints = Waypoints;
-    }))
 
+    EntityInfo.ComponentsList["SpawningData"] = {Waypoints = Waypoints, StartPos = StartPos}
+    EntityInfo.ComponentsList.EntityData["Model"] = Model:Clone()
+
+    World:spawn(MakeComponentList(EntityInfo.ComponentsList))
 end

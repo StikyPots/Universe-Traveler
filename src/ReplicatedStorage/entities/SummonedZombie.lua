@@ -6,9 +6,9 @@ return {
     ComponentsList = {
 
       EntityData = {
-        Name = "Zombie",
+        Name = "summoned Zombie",
         Health = 15,
-        Speed = 2,
+        Speed = 6.5,
         Model = nil,
       },
 

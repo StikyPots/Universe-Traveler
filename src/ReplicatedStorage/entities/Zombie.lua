@@ -1,9 +1,17 @@
 return {
-    System = "WalkingEntity",
-    Health = 10,
-    Speed = 5,
-
     Animations = {
         Walking = "16156648442";
+    },
+
+    ComponentsList = {
+
+      EntityData = {
+        Name = "Zombie",
+        Health = 15,
+        Speed = 2,
+        Model = nil,
+      },
+
+      CanWalk = true,
     }
 }

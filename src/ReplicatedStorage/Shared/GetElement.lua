@@ -27,7 +27,7 @@ export type Tower = {
 
 
 
-function GetEntity(name): Entity
+local function GetEntity(name)
     local success, result = pcall(require, entitiesFolder:FindFirstChild(name))
 
     if success then
@@ -35,7 +35,7 @@ function GetEntity(name): Entity
     end
 end
 
-function GetTower(name): Tower
+local function GetTower(name): Tower
     local success, result = pcall(require, TowersFolder:FindFirstChild(name))
 
     if success then
