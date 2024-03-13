@@ -4,7 +4,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
 local signal = require(ReplicatedStorage.Libraries.signal)
-local red = require(ReplicatedStorage.Libraries.red)
 local matter = require(ReplicatedStorage.Libraries.matter)
 local MapLoader = require(ServerStorage.MapLoader)
 local WaveController = require(script.Parent.WaveController)
@@ -16,9 +15,8 @@ local Constante = require(ReplicatedStorage.Enums.Constante)
 
 
 
-
-local BASE_COINS = 95
-local INCREMENT = 100
+local BASE_COINS = Constante.BASE_COINS
+local INCREMENT = Constante.COINS_INCREMENT
 
 
 local SystemsFolder = ServerStorage.Systems.EntitiesSystems
@@ -112,8 +110,8 @@ function SequenceController.Finish(self: SequenceController)
     self.Finished = true
     
     task.defer(function()
-        for _, entity in CollectionService:GetTagged("Entities") do
-            entity:RemoveTag("Entities")
+        for _, entity in CollectionService:GetTagged(Constante.EntityTag) do
+            entity:RemoveTag(Constante.EntityTag)
             entity:Destroy()
             task.wait()
         end
@@ -127,7 +125,13 @@ end
 function SequenceController.GiveWaveAmountCoins(self: SequenceController, Players: {Player}, currentWave)
     for _, Player: Player in Players do
         local IPlayer = PlayerInterface.GetIPlayerFromPlayerInstance(Player)
-        IPlayer.SessionData:Update("Coins", BASE_COINS + (currentWave - 1) * INCREMENT)
+        local CoinsToGive: number = BASE_COINS + (currentWave - 1) * INCREMENT
+
+
+
+
+
+        IPlayer.SessionData:Update("Coins", CoinsToGive)
     end
 end
 

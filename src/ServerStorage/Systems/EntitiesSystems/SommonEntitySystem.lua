@@ -13,6 +13,9 @@ local Constantes = require(ReplicatedStorage.Enums.Constante)
 local CanSommonComponent = components("CanSommon")
 local EntityDataComponent = components("EntityData")
 local SpawningDataComponent = components("SpawningData")
+local CanWalkComponent = components("CanWalk")
+local CanFlyComponent = components("CanFly")
+
 
 local SpawnEntityController = require(ServerStorage.Services.SpawnEntity)
 
@@ -27,7 +30,7 @@ local Base = require(ServerStorage.Services.BaseController).GetCurrentBase()
 
 
 return function (World: matter.World)
-    for id, EntityDataValue, SpawningDataValue in World:query(EntityDataComponent, SpawningDataComponent, CanSommonComponent) do
+    for id, EntityDataValue, SpawningDataValue in World:query(EntityDataComponent, SpawningDataComponent, CanSommonComponent):without(CanWalkComponent, CanFlyComponent) do
 
         local EntityData = EntityDataValue.EntityData
         local SpawningData = SpawningDataValue.SpawningData

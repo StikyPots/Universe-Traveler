@@ -22,12 +22,12 @@ local EndGameNetwork = red.Server("EndGameNetwork")
 local GameStatsNetwork = red.Server("GameStatsNetwork")
 
 --wait the current thread to wait players
+Map:load()
 PreloadTimer:WaitForPlayersToStartTimer()
 
 
 
 PreloadTimer.Ended:Connect(function()
-    Map:load()
     Map:TeleportPlayers(Players:GetPlayers())
     StartTimer:Start()
 end)
@@ -50,8 +50,4 @@ Sequence.Base.OnDestroyed:Connect(function()
     for _, p in Players:GetPlayers() do
         p:Kick("lose")
     end
-end)
-
-Sequence.Base.OnDamaged:Connect(function(CurrentHealth: number)
-    print(CurrentHealth)
 end)

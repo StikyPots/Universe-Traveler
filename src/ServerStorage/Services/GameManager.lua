@@ -42,10 +42,9 @@ end
 
 
 
-function GameManager.GetDatFaromMemoryStore(self: GameManager)
-
+function GameManager.GetDataFromMemoryStore(self: GameManager)
     print(self.Key)
-
+    
     local succes, result = pcall(function()
         return PartySortedMap:GetAsync(self.Key)
     end)

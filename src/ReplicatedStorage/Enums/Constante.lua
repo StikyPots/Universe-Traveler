@@ -5,6 +5,11 @@ return {
     TowerTag = "Tower",
     EntityTag = "Entity",
 
+    PartyTimer = 45,
+    
+    BASE_COINS = 125;
+    COINS_INCREMENT = 100,
+
     TowerMaxUpdate = 4,
 
     GlobalWaveSettings = {
